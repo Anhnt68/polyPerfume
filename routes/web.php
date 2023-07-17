@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CapacityController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +44,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('edit');
         Route::post('/update/{id}', [CategoryController::class, 'update'])->name('post-edit');
         Route::delete('/delete/{id}', [CategoryController::class, 'destroy'])->name('delete');
+    });
+    Route::prefix('capacity')->name('capacity.')->group(function () {
+        Route::get('/', [CapacityController::class, 'index'])->name('home');
+        Route::get('/add', [CapacityController::class, 'create'])->name('add');
+        Route::post('/add', [CapacityController::class, 'store'])->name('post-add');
+        Route::get('/edit/{id}', [CapacityController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [CapacityController::class, 'update'])->name('post-edit');
+        Route::delete('/delete/{id}', [CapacityController::class, 'destroy'])->name('delete');
+    });
+    Route::prefix('user')->name('user.')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('home');
+        Route::get('/add', [UserController::class, 'create'])->name('add');
+        Route::post('/add', [UserController::class, 'store'])->name('post-add');
+        Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [UserController::class, 'update'])->name('post-edit');
+        Route::delete('/delete/{id}', [UserController::class, 'destroy'])->name('delete');
     });
 });
 

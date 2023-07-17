@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Capacities extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'capacity_name'
+    ];
+
+    public $timestamps = true;
 }
