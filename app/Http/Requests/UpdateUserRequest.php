@@ -28,10 +28,10 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => ['required','max:50', Rule::unique($tableName)->ignore($id)],
             'email'=> ['required', 'regex:/^.+@.+$/i',Rule::unique($tableName)->ignore($id)],
-            'password' => "required",
-            'address' => "required",
+            'password' => ['required'],
+            'address' => ['required'],
             'phone' => ['required',Rule::unique($tableName)->ignore($id),'max:10'],
-            'role' => 'required'
+            'role' => ['required'],
         ];
     }
     public function message()
