@@ -68,8 +68,8 @@
                                     class="mdi mdi-format-page-break"></i><span
                                     class="badge badge-pill badge-danger float-right">6</span><span>Capacity</span></a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="ui-cards.html">List</a></li>
-                                <li><a href="ui-buttons.html">Add</a></li>
+                                <li><a href="{{ route('admin.capacity.home') }}">List</a></li>
+                                <li><a href="{{ route('admin.capacity.add') }}">Add</a></li>
                             </ul>
                         </li>
                         <li>
@@ -85,8 +85,8 @@
                             <a href="javascript: void(0);" class="waves-effect"><i class="bi bi-person-circle"></i><span
                                     class="badge badge-pill badge-danger float-right">6</span><span>User</span></a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="ui-cards.html">List</a></li>
-                                <li><a href="ui-buttons.html">Add</a></li>
+                                <li><a href="{{ route('admin.user.home') }}">List</a></li>
+                                <li><a href="{{ route('admin.user.add') }}">Add</a></li>
                             </ul>
                         </li>
                         <li>
