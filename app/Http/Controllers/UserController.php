@@ -52,7 +52,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserRequest $request, string $id)
+    public function update(UpdateUserRequest $request, string $id)
     {
         $model = User::query()->findOrFail($id);
         $model->fill($request->all());

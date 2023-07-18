@@ -15,6 +15,9 @@
                                     <label>Price</label>
                                     <input type="number" class="form-control" data-toggle="input-mask"
                                         data-mask-format="00/00/0000" name="price">
+                                    @error('price')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                     <span class="font-13 text-muted">e.g "DD/MM/YYYY"</span>
                                 </div>
                                 <div class="form-group">
@@ -22,15 +25,18 @@
                                     <input type="number" class="form-control" data-toggle="input-mask"
                                         data-mask-format="00/00/0000" name="quantity">
                                     <span class="font-13 text-muted">e.g "DD/MM/YYYY"</span>
+                                    @error('quantity')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                             </div> <!-- end col -->
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Category</label>
+                                    <label>Capacity</label>
                                     <select name="capacity_id" id="" class="form-control">
-                                        <option value="#">Chọn danh mục</option>
+                                        <option value="">Chọn dung tích</option>
                                         @if (!empty($allCapacity))
                                             {
                                             @foreach ($allCapacity as $item)
@@ -42,11 +48,14 @@
                                         }
                                     </select>
                                     <span class="font-13 text-muted">e.g "xxxx-xxxx"</span>
+                                    @error('capacity_id')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>Product</label>
                                     <select name="product_id" id="" class="form-control">
-                                        <option value="#">Chọn sản phẩm</option>
+                                        <option value="">Chọn sản phẩm</option>
                                         @if (!empty($allProduct))
                                             {
                                             @foreach ($allProduct as $item)
@@ -58,6 +67,9 @@
                                         }
                                     </select>
                                     <span class="font-13 text-muted">e.g "xxxx-xxxx"</span>
+                                    @error('product_id')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
 

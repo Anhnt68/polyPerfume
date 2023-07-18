@@ -26,7 +26,7 @@
                                 <th>Created</th>
                                 <th>Updated</th>
                                 <th> <button type="submit" class="btn btn-primary waves-effect waves-light"><a
-                                            href="{{ route('admin.product.add') }}" class="text-white">Thêm
+                                            href="{{ route('admin.stocks.add') }}" class="text-white">Thêm
                                             mới</a></button></th>
 
                             </tr>

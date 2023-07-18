@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Categories;
 use App\Models\Products;
 use Illuminate\Http\Request;
@@ -29,11 +30,11 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        if ($request->has('product_image')) {
-            $file = $request->product_image;
-            $ext = $request->product_image->extension();
+        if ($request->has('image')) {
+            $file = $request->image;
+            $ext = $request->image->extension();
             $file_name = $request->getSchemeAndHttpHost() . '/' . 'Uploads/' . time() . '-' . 'image.' . $ext;
             $file->move(public_path('Uploads'), $file_name);
         }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StockRequest;
 use App\Models\Capacities;
 use App\Models\Products;
 use App\Models\Stocks;
@@ -32,7 +33,7 @@ class StockController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StockRequest $request)
     {
         Stocks::create($request->all());
         return redirect()->route('admin.stocks.home');

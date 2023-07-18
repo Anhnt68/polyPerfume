@@ -16,18 +16,24 @@
                                     <input type="text" class="form-control" data-toggle="input-mask"
                                         data-mask-format="00/00/0000" name="name">
                                     <span class="font-13 text-muted">e.g "DD/MM/YYYY"</span>
+                                    @error('name')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="">Desc</label>
                                     <textarea name="desc" class="form-control" cols="80" rows="10" style="width: 100%;border-radius: 5px;"></textarea>
                                 </div>
+                                @error('desc')
+                                <span style="color: red">{{ $message }}</span>
+                                @enderror
                             </div> <!-- end col -->
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Category</label>
                                     <select name="cate_id" id="" class="form-control">
-                                        <option value="#">Chọn danh mục</option>
+                                        <option value="">Chọn danh mục</option>
                                         @if (!empty($allCate))
                                             {
                                             @foreach ($allCate as $item)
@@ -38,12 +44,14 @@
                                         }
                                     </select>
                                     <span class="font-13 text-muted">e.g "xxxx-xxxx"</span>
+                                    @error('cate_id')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>Image</label><br>
-                                    <input type="file" class="dropify" name="product_image" /><br>
+                                    <input type="file" class="dropify" name="image" /><br>
                                     <span class="font-13 text-muted">e.g "xxxx-xxxx"</span>
-
                                 </div>
 
                             </div>

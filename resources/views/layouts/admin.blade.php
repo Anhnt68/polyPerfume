@@ -59,8 +59,8 @@
                             <a href="javascript: void(0);" class="waves-effect"><i class="bi bi-archive-fill"></i><span
                                     class="badge badge-pill badge-danger float-right">6</span><span>Product</span></a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="ui-cards.html">List</a></li>
-                                <li><a href="ui-buttons.html">Add</a></li>
+                                <li><a href="{{ route('admin.product.home') }}">List</a></li>
+                                <li><a href="{{ route('admin.product.add') }}">Add</a></li>
                             </ul>
                         </li>
                         <li>

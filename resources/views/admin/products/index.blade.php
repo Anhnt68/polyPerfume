@@ -46,7 +46,7 @@
                                     <td>{{ $value->updated_at }}</td>
                                     <td class="d-flex space-around">
                                         <div class="">
-                                            <form action="{{ route('admin.anhnt683@gmail.com.edit', ['id' => $value->id]) }}"
+                                            <form action="{{ route('admin.product.edit', ['id' => $value->id]) }}"
                                                 id="item-{{ $value->id }}" method="get">
                                                 @csrf
                                                 @method('PUT')
