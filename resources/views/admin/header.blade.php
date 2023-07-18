@@ -2,12 +2,15 @@
     <!-- LOGO -->
     <div class="navbar-brand-box d-flex align-items-left">
         <a href="index.html" class="logo">
+{{--            <span>--}}
+{{--                <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="18">--}}
+{{--            </span>--}}
+{{--            <i>--}}
+{{--                <img src="{{ asset('assets/images/logo-small.png') }}" alt="" height="24">--}}
+{{--            </i>--}}
             <span>
-                <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="18">
+                <img src="{{ asset('assets/images/logo.jpg') }}" alt="" height="50">
             </span>
-            <i>
-                <img src="{{ asset('assets/images/logo-small.png') }}" alt="" height="24">
-            </i>
         </a>
 
         <button type="button" class="btn btn-sm mr-2 d-lg-none px-3 font-size-16 header-item waves-effect waves-light"
