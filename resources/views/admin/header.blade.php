@@ -9,7 +9,7 @@
 {{--                <img src="{{ asset('assets/images/logo-small.png') }}" alt="" height="24">--}}
 {{--            </i>--}}
             <span>
-                <img src="{{ asset('assets/images/logo.jpg') }}" alt="" height="50">
+                <img src="{{ asset('assets/images/logo.png') }}" alt="" height="100">
             </span>
         </a>
 
@@ -154,7 +154,7 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img class="rounded-circle header-profile-user" src="{{ asset('assets/images/users/avatar-1.jpg') }}"
                     alt="Header Avatar">
-                <span class="d-none d-sm-inline-block ml-1">Henry</span>
+                <span class="d-none d-sm-inline-block ml-1">{{ Auth::user()->name }}</span>
                 <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
@@ -177,7 +177,16 @@
                     <span>Lock Account</span>
                 </a>
                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                    <span>Log Out</span>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-dropdown-link :href="route('logout')"
+                                         onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                            <span>Log Out</span>
+                        </x-dropdown-link>
+                    </form>
+
                 </a>
             </div>
         </div>

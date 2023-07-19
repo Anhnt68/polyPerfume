@@ -2,11 +2,11 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Capacities;
-use Illuminate\Validation\Rule;
+use App\Models\Products;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class UpdateCapacityRequest extends FormRequest
+class UpdateProductResquest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,22 +23,27 @@ class UpdateCapacityRequest extends FormRequest
      */
     public function rules(): array
     {
-        $tableName = (new Capacities())->getTable();
+        $tableName = (new Products())->getTable();
         $id = request()->segment('2');
         return [
-            // 'cate_name' => "required|max:20|min:3|unique:$tableName,cate_name",
-            'capacity_name' => [
-                'required', 'max:20',
+            'name' => [
+                'required', 'max:20','min:3',
                 Rule::unique($tableName)->ignore($id)
             ],
+            'image' => 'nullable',
+            'desc' =>'nullable',
+            'cate_id' => 'required'
         ];
+
     }
     public function message()
     {
         return [
-            'capacity_name:required' => ':attribute bắt buộc phải nhập',
-            'capacity_name:max' => ':attribute quá dưới :max kí tự',
-            'capacity_name:unique' => ':attribute đã tồn tại',
+            'name:required' => ':attribute bắt buộc phải nhập',
+            'name:max' => ':attribute quá dưới :max kí tự',
+            'name:min' => ':attribute không dưới :min kí tự',
+            'name:unique' => ':attribute đã tồn tại',
+            'cate_id' => ':attribute bắt buộc phải nhập',
         ];
     }
 }

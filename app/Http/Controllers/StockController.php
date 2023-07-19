@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StockRequest;
+use App\Http\Requests\UpdateStockRequest;
 use App\Models\Capacities;
 use App\Models\Products;
 use App\Models\Stocks;
@@ -61,7 +62,7 @@ class StockController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateStockRequest $request, string $id)
     {
         $model = Stocks::query()->findOrFail($id);
         $model->fill($request->all());
