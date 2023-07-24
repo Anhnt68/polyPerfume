@@ -25,9 +25,7 @@
                                 <th>Capacity</th>
                                 <th>Created</th>
                                 <th>Updated</th>
-                                <th> <button type="submit" class="btn btn-primary waves-effect waves-light"><a
-                                            href="{{ route('admin.stocks.add') }}" class="text-white">Thêm
-                                            mới</a></button></th>
+                                <th>Thao tác</th>
 
                             </tr>
                         </thead>
@@ -58,7 +56,8 @@
                                                 id="item-{{ $value->id }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger"> <i
+                                                <button class="btn btn-danger"
+                                                    onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"> <i
                                                         class="bi bi-trash-fill fs-6 text-white mx-2"></i></button>
                                             </form>
                                         </div>

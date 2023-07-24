@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">Thêm sản phẩm</h4>
+                    <h4 class="card-title">Sửa sản phẩm</h4>
 
                     <form action="{{ route('admin.product.post-edit', $data->id) }}" method="post"
                         enctype="multipart/form-data">

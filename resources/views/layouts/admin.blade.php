@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Lurid - Material Design Admin & Dashboard Template</title>
+    <title>Poly Perfume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="MyraStudio" name="author" />
@@ -75,7 +75,7 @@
                         <li>
                             <a href="javascript: void(0);" class="waves-effect"><i
                                     class="mdi mdi-format-page-break"></i><span
-                                    class="badge badge-pill badge-danger float-right">6</span><span>ProductCapacity</span></a>
+                                    class="badge badge-pill badge-danger float-right">6</span><span>Stocks</span></a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="{{ route('admin.stocks.home') }}">List</a></li>
                                 <li><a href="{{ route('admin.stocks.add') }}">Add</a></li>

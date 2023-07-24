@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Basic Data Table</h4>
+                    <h4 class="card-title">Danh sách tài khoản</h4>
                     <p class="card-subtitle mb-4">
                         DataTables has most features enabled by default, so all you need to do to use it with your own
                         tables is to call the construction
@@ -18,17 +18,18 @@
 
                         <thead>
                             <tr>
-                                <th style="width:5%">STT</th>
+                                <th style="width:2%">STT</th>
                                 <th>Tên</th>
                                 <th>Email</th>
-                                <th>Password</th>
+                                <th style="width:10%">Password</th>
                                 <th>Address</th>
                                 <th>Số điện thoại</th>
                                 <th>Role</th>
                                 <th>Created</th>
                                 <th>Updated</th>
-                                <th>  <button type="submit" class="btn btn-primary waves-effect waves-light"><a
-                                    href="{{ route('admin.user.add') }}" class="text-white">Thêm mới</a></button></th>
+                                <th> <button type="submit" class="btn btn-primary waves-effect waves-light"><a
+                                            href="{{ route('admin.user.add') }}" class="text-white">Thêm mới</a></button>
+                                </th>
 
                             </tr>
                         </thead>
@@ -41,10 +42,10 @@
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->email }}</td>
 
-                                    <td>{{ $value->password	}}</td>
+                                    <td></td>
                                     <td>{{ $value->address }}</td>
                                     <td>{{ $value->phone }}</td>
-                                    @if($value->role == 0)
+                                    @if ($value->role == 0)
                                         <td>Admin</td>
                                     @elseif($value->role == 1)
                                         <td>Khách hàng</td>
@@ -67,7 +68,8 @@
                                                 id="item-{{ $value->id }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger"> <i
+                                                <button class="btn btn-danger"
+                                                    onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"> <i
                                                         class="bi bi-trash-fill fs-6 text-white mx-2"></i></button>
                                             </form>
                                         </div>

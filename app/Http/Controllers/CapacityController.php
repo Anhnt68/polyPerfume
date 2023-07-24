@@ -14,7 +14,7 @@ class CapacityController extends Controller
      */
     public function index()
     {
-        $data = Capacities::all();
+        $data = Capacities::orderBy('created_at', 'DESC')->get();
         return view('admin.capacities.index', compact('data'));
     }
 

@@ -179,7 +179,6 @@
                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-
                         <x-dropdown-link :href="route('logout')"
                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
