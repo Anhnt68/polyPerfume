@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Basic Data Table</h4>
+                    <h4 class="card-title">Danh sách sản phẩm</h4>
                     <p class="card-subtitle mb-4">
                         DataTables has most features enabled by default, so all you need to do to use it with your own
                         tables is to call the construction
@@ -25,9 +25,7 @@
                                 <th>Cate_id</th>
                                 <th>Created</th>
                                 <th>Updated</th>
-                                <th> <button type="submit" class="btn btn-primary waves-effect waves-light"><a
-                                            href="{{ route('admin.product.add') }}" class="text-white">Thêm
-                                            mới</a></button></th>
+                                <th>Thao tác</th>
 
                             </tr>
                         </thead>
@@ -59,7 +57,8 @@
                                                 id="item-{{ $value->id }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger"> <i
+                                                <button class="btn btn-danger"
+                                                    onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"> <i
                                                         class="bi bi-trash-fill fs-6 text-white mx-2"></i></button>
                                             </form>
                                         </div>

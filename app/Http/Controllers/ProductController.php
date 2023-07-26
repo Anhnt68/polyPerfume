@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Products::all();
+        $data = Products::orderBy('created_at', 'DESC')->get();
         return view('admin.products.index', compact('data'));
     }
 
@@ -32,12 +32,13 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        if ($request->has('image')) {
-            $file = $request->image;
-            $ext = $request->image->extension();
+        if ($request->has('product_image')) {
+            $file = $request->product_image;
+            $ext = $request->product_image->extension();
             $file_name = $request->getSchemeAndHttpHost() . '/' . 'Uploads/' . time() . '-' . 'image.' . $ext;
             $file->move(public_path('Uploads'), $file_name);
         }
+        // dd($file_name);
         $request->merge(['image' => $file_name]);
         $request['image'] = $file_name;
         Products::create($request->all());

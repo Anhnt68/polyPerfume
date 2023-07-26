@@ -16,7 +16,8 @@
             @endif --}}
             <div class="form-group">
                 <label for="simpleinput">Dung tích</label>
-                <input type="text" name="capacity_name" id="simpleinput" class="form-control" placeholder="Enter your text">
+                <input type="text" name="capacity_name" id="simpleinput" class="form-control" placeholder="Enter your text"
+                    value="{{ old('capacity_name') }}">
                 @error('capacity_name')
                     <span style="color: red">{{ $message }}</span>
                 @enderror

@@ -361,7 +361,8 @@
             </div>
             <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
                 <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-
+                    {{-- <img src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
+                    <h1>Chào mừng bạn đến với trang admin</h1>
                 </div>
                 <div class="formbg-outer">
                     <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">

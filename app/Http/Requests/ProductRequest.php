@@ -25,11 +25,10 @@ class ProductRequest extends FormRequest
         $tableName = (new Products())->getTable();
         return [
             'name' => "required|max:20|min:3|unique:$tableName,name," . $this->id,
-            'image' => 'nullable',
-            'desc' =>'nullable',
+            'product_image' => 'nullable|required',
+            'desc' => 'nullable|required',
             'cate_id' => 'required'
         ];
-
     }
     public function message()
     {

@@ -24,7 +24,10 @@
 
             <div class="form-group">
                 <label for="example-password">Ảnh danh mục</label> <br>
-                <input type="file" class="dropify" data-height="300" name="cate_image" />
+                <input type="file" class="dropify" data-height="300" name="cate_image" /><br>
+                @error('cate_image')
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
             </div>
             @csrf
             <button type="submit" class="btn btn-success btn-rounded waves-effect waves-light">Thêm mới</button>

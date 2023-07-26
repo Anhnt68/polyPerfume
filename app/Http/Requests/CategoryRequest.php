@@ -25,7 +25,7 @@ class CategoryRequest extends FormRequest
         $tableName = (new Categories())->getTable();
         return [
             'cate_name' => "required|max:20|min:3|unique:$tableName,cate_name," . $this->id,
-            'cate_image' => 'nullable'
+            'cate_image' => 'nullable|required'
         ];
     }
 

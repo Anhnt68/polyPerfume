@@ -27,17 +27,15 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <span class="badge badge-soft-primary float-right">Daily</span>
-                            <h5 class="card-title mb-0">Cost per Unit</h5>
+                            <h5 class="card-title mb-0">Danh mục
                         </div>
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    $17.21
+                                    {{ $allCate }}
                                 </h2>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-muted">12.5% <i class="mdi mdi-arrow-up text-primary"></i></span>
-                            </div>
+
                         </div>
 
                         <div class="progress shadow-sm" style="height: 7px;">
@@ -53,17 +51,15 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <span class="badge badge-soft-primary float-right">Per Week</span>
-                            <h5 class="card-title mb-0">Market Revenue</h5>
+                            <h5 class="card-title mb-0">Sản phẩm</h5>
                         </div>
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    $1875.54
+                                    {{ $allProduct }}
                                 </h2>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-muted">18.71% <i class="mdi mdi-arrow-down text-danger"></i></span>
-                            </div>
+
                         </div>
 
                         <div class="progress shadow-sm" style="height: 7px;">
@@ -79,16 +75,13 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <span class="badge badge-soft-primary float-right">Per Month</span>
-                            <h5 class="card-title mb-0">Expenses</h5>
+                            <h5 class="card-title mb-0">Khách Hàng</h5>
                         </div>
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    $784.62
+                                    {{ $allUser }}
                                 </h2>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-muted">57% <i class="mdi mdi-arrow-up text-primary"></i></span>
                             </div>
                         </div>
 
@@ -105,17 +98,14 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <span class="badge badge-soft-primary float-right">All Time</span>
-                            <h5 class="card-title mb-0">Daily Visits</h5>
+                            <h5 class="card-title mb-0">Đơn Hàng</h5>
                         </div>
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0">
-                                    1,15,187
-                                </h2>
+                                    0 </h2>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-muted">17.8% <i class="mdi mdi-arrow-down text-danger"></i></span>
-                            </div>
+
                         </div>
 
                         <div class="progress shadow-sm" style="height: 7px;">
@@ -259,7 +249,8 @@
                                         <td class="table-user">
                                             <img src="assets/images/users/avatar-4.jpg" alt="table-user"
                                                 class="mr-2 avatar-xs rounded-circle">
-                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Paul J.
+                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Paul
+                                                J.
                                                 Friend</a>
                                         </td>
                                         <td>
@@ -280,7 +271,8 @@
                                         <td class="table-user">
                                             <img src="assets/images/users/avatar-3.jpg" alt="table-user"
                                                 class="mr-2 avatar-xs rounded-circle">
-                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Bryan J.
+                                            <a href="javascript:void(0);" class="text-body font-weight-semibold">Bryan
+                                                J.
                                                 Luellen</a>
                                         </td>
                                         <td>

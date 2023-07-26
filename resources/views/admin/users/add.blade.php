@@ -15,37 +15,41 @@
             @endif --}}
             <div class="form-group">
                 <label for="simpleinput">Tên</label>
-                <input type="text" name="name" id="simpleinput" class="form-control" placeholder="Enter your name">
+                <input type="text" name="name" id="simpleinput" class="form-control" placeholder="Enter your name"
+                    value="{{ old('name') }}">
                 @error('name')
                     <span style="color: red">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="simpleinput">Email</label>
-                <input type="text" name="email" id="simpleinput" class="form-control" placeholder="Enter your email">
+                <input type="text" name="email" id="simpleinput" class="form-control" placeholder="Enter your email"
+                    value="{{ old('email') }}">
                 @error('email')
-                <span style="color: red">{{ $message }}</span>
+                    <span style="color: red">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="simpleinput">Mật khẩu</label>
-                <input type="password" name="password" id="simpleinput"  class="form-control" placeholder="Password">
+                <input type="password" name="password" id="simpleinput" class="form-control" placeholder="Password">
                 @error('password')
-                <span style="color: red">{{ $message }}</span>
+                    <span style="color: red">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="simpleinput">Địa chỉ</label>
-                <input type="text" name="address" id="simpleinput" class="form-control" placeholder="Enter your text">
+                <input type="text" name="address" id="simpleinput" class="form-control" placeholder="Enter your text"
+                    value="{{ old('address') }}">
                 @error('address')
-                <span style="color: red">{{ $message }}</span>
+                    <span style="color: red">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="simpleinput">Số điện thoại</label>
-                <input type="text" name="phone" id="simpleinput" class="form-control" placeholder="Enter your phone number">
+                <input type="text" name="phone" id="simpleinput" class="form-control"
+                    placeholder="Enter your phone number" value="{{ old('phone') }}">
                 @error('phone')
-                <span style="color: red">{{ $message }}</span>
+                    <span style="color: red">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
@@ -55,7 +59,7 @@
                     <option value="1">Khách hàng</option>
                 </select>
                 @error('role')
-                <span style="color: red">{{ $message }}</span>
+                    <span style="color: red">{{ $message }}</span>
                 @enderror
             </div>
             @csrf

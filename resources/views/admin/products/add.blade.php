@@ -14,18 +14,17 @@
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" class="form-control" data-toggle="input-mask"
-                                        data-mask-format="00/00/0000" name="name">
-                                    <span class="font-13 text-muted">e.g "DD/MM/YYYY"</span>
+                                        data-mask-format="00/00/0000" name="name" value="{{ old('name') }}">
                                     @error('name')
-                                    <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="">Desc</label>
-                                    <textarea name="desc" class="form-control" cols="80" rows="10" style="width: 100%;border-radius: 5px;"></textarea>
+                                    <textarea name="desc" class="form-control" cols="80" rows="10" style="width: 100%;border-radius: 5px;">{{ old('desc') }}</textarea>
                                 </div>
                                 @error('desc')
-                                <span style="color: red">{{ $message }}</span>
+                                    <span style="color: red">{{ $message }}</span>
                                 @enderror
                             </div> <!-- end col -->
 
@@ -37,21 +36,23 @@
                                         @if (!empty($allCate))
                                             {
                                             @foreach ($allCate as $item)
-                                                <option value="{{ $item->id }}" {{ old('cate_id') == $item->id ? 'selected' : false }}>
+                                                <option value="{{ $item->id }}"
+                                                    {{ old('cate_id') == $item->id ? 'selected' : false }}>
                                                     {{ $item->cate_name }}</option>
                                             @endforeach
                                         @endif
                                         }
                                     </select>
-                                    <span class="font-13 text-muted">e.g "xxxx-xxxx"</span>
                                     @error('cate_id')
-                                    <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>Image</label><br>
-                                    <input type="file" class="dropify" name="image" /><br>
-                                    <span class="font-13 text-muted">e.g "xxxx-xxxx"</span>
+                                    <input type="file" class="dropify" name="product_image" /><br>
+                                    @error('product_image')
+                                        <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                             </div>

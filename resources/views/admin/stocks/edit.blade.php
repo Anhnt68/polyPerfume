@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">Thêm sản phẩm</h4>
+                    <h4 class="card-title">Thêm kho hàng</h4>
 
                     <form action="{{ route('admin.stocks.post-edit', $data->id) }}" method="post"
                         enctype="multipart/form-data">
@@ -66,8 +66,7 @@
 
                         </div> <!-- end col -->
                         @csrf
-                        <button type="submit" class="btn btn-success btn-rounded waves-effect waves-light">Thêm
-                            mới</button>
+                        <button type="submit" class="btn btn-success btn-rounded waves-effect waves-light">Sửa</button>
 
                         <a href="{{ route('admin.category.home') }}"
                             class="btn btn-warning btn-rounded waves-effect waves-light">Quay
