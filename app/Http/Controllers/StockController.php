@@ -80,4 +80,8 @@ class StockController extends Controller
         Stocks::query()->findOrFail($id)->delete();
         return redirect()->route('admin.stocks.home');
     }
+    public function home(){
+        $data = Stocks::orderBy('created_at', 'DESC')->get();
+        return view('client.blocks.main', compact('data'));
+    }
 }

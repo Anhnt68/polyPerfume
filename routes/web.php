@@ -20,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('client.blocks.main');
-});
+Route::get('/', [StockController::class, 'home']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

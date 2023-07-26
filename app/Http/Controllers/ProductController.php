@@ -72,7 +72,7 @@ class ProductController extends Controller
             $file = $request->product_image;
             $ext = $request->product_image->extension();
             $file_name = $request->getSchemeAndHttpHost() . '/' . 'Uploads/' . time() . '-' . 'image.' . $ext;
-            $file->move(public_path('Uploads'), $file_name);    
+            $file->move(public_path('Uploads'), $file_name);
         }
         $request->merge(['image' => $file_name]);
         $request['image'] = $file_name;
