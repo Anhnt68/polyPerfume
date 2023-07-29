@@ -9,7 +9,7 @@ use App\Models\User;
 use App\Models\Orders;
 
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
