@@ -672,7 +672,7 @@
                                     <!-- Product Details -->
                                     <div class="product-item-details">
                                         <div class="product-item-name"> <a title="Longline  asymmetric midi skirt"
-                                                                           href="product.html" class="product-item-link">{{$product->Product->name}}</a>
+                                                                           href="{{route('product.detail', $product->id)}}" class="product-item-link">{{$product->Product->name}}</a>
                                         </div>
                                         <div class="product-item-description">Neque porro quisquam est, qui
                                             dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
