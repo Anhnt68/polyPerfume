@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Stocks;
+use Illuminate\Http\Request;
 
-
-
-class HomeController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = Stocks::orderBy('created_at', 'DESC')->get();
-        return view('client.blocks.main', compact('data'));
+        return view('client.products.details', compact('data'));
     }
 
     /**
@@ -40,7 +38,8 @@ class HomeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Stocks::query()->findOrFail($id);
+        return view('client.products.details', compact('data'));
     }
 
     /**

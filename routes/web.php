@@ -22,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-
+Route::prefix('product')->name('product.')->group(function () {
+    Route::get('/detail/{id}', [\App\Http\Controllers\client\ProductController::class, 'show'])->name('detail');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
