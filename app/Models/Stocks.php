@@ -19,6 +19,6 @@ class Stocks extends Model
     }
     public function Capacity()
     {
-        return $this->belongsTo(Capacities::class, 'capacity_id', 'id');
+        return $this->hasOne(Capacities::class, 'id', 'capacity_id');
     }
 }

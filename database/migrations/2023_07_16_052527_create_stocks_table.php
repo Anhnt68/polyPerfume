@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('product_id')->references('id')->on('products');
             $table->integer('quantity');
             $table->float('price');
-            $table->foreignId('product_id')->references('id')->on('products');
             $table->foreignId('capacity_id')->references('id')->on('capacities');
             $table->timestamps();
         });

@@ -20,10 +20,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//dd(bcrypt('123456'));
 Route::get('/', [HomeController::class, 'index']);
+Route::get('test', [HomeController::class, 'getProductPrice'])->name('get-price');
+Route::get('add-to-cart', [\App\Http\Controllers\Client\CartController::class, 'addToCart'])->name('add-to-cart');
+Route::get('view-cart', [\App\Http\Controllers\Client\CartController::class, 'viewCart'])->name('view-cart');
+
+
 Route::prefix('product')->name('product.')->group(function () {
-    Route::get('/detail/{id}', [\App\Http\Controllers\client\ProductController::class, 'show'])->name('detail');
+    Route::get('/detail/{id}', [HomeController::class, 'productDetail'])->name('detail');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -93,3 +98,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('delete');
     });
 });
+
