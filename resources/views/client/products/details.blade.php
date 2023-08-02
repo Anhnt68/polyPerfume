@@ -1,7 +1,6 @@
 @extends('layouts.client')
 
 @push('style')
-
     <style>
         .capacity-ml.active {
             background: #32d0c6;
@@ -26,7 +25,8 @@
             border-right: 1px solid #eee;
         }
 
-        .promo-box .promo-item:last-child, .promo-box .promo-item:nth-child(3) {
+        .promo-box .promo-item:last-child,
+        .promo-box .promo-item:nth-child(3) {
             border-right: 0px none;
         }
 
@@ -63,45 +63,50 @@
             margin-bottom: 30px;
         }
     </style>
-
 @endpush
 
 @section('content')
-    @foreach($product as $key=> $value)
+    @foreach ($product as $key => $value)
         <div class="row">
-            <input type="hidden" id="product_id" value="{{$value->id}}">
+            <input type="hidden" id="product_id" value="{{ $value->id }}">
             <input type="hidden" id="stock_id" value="">
 
             <div class="col-6">
-                <img src="{{$value->image}}" width="100%">
+                <img src="{{ $value->image }}" width="100%">
             </div>
-            <div class="col-6">
-                <p id="name">Tên: {{$value->name}}</p>
-                Giá: <p id="productPrice">{{$value->stocks[0]->price}}</p>
-
-                @foreach($value->stocks as $capa)
-                    <span data-id="{{$capa->id}}" id="capacity" class="p-3 border capacity-ml"> {{$capa->Capacity->capacity_name}} ml</span>
-                @endforeach
+            <div class="col-6 row">
+                <div class="col-6">
+                    <h4 id="name">Tên: {{ $value->name }}</h4>
+                    <h4 id="productPrice">Giá: {{ $value->stocks[0]->price }}đ</h4>
+                    <h4>Dung tích</h4>
+                    @foreach ($value->stocks as $capa)
+                        <span data-id="{{ $capa->id }}" id="capacity" class="p-3 border capacity-ml">
+                            {{ $capa->Capacity->capacity_name }} ml</span>
+                    @endforeach
+                </div>
+                <div class="col-6">
+                    <form action="">
+                        <label for="">Quantity</label>
+                        <div class="input-group text-center mb-3" style="width: 130px;">
+                            <button class="input-group-text decrement-btn">-</button>
+                            <input type="text" name="quantity" id="" class="form-control text-center qty-input"
+                                value="1">
+                            <button class="input-group-text increment-btn">+</button>
+                        </div>
+                    </form>
+                    <div id="addtocart" class="btn">Add to cart</div>
+                </div>
             </div>
         </div>
         {{--
         price
         --}}
     @endforeach
-    <form action="">
-        <label for="">Quantity</label>
-        <div class="input-group text-center mb-3" style="width: 130px;">
-            <button class="input-group-text decrement-btn">-</button>
-            <input type="text" name="quantity" id="" class="form-control text-center qty-input" value="1">
-            <button class="input-group-text increment-btn">+</button>
-        </div>
-    </form>
-    <div id="addtocart">Add to cart</div>
 @endsection
 @section('js')
     <script>
-        $(document).ready(function () {
-            $('.increment-btn').click(function (e) {
+        $(document).ready(function() {
+            $('.increment-btn').click(function(e) {
                 e.preventDefault();
 
                 var inc_val = $('.qty-input').val();
@@ -112,7 +117,7 @@
                     $('.qty-input').val(value);
                 }
             })
-            $('.decrement-btn').click(function (e) {
+            $('.decrement-btn').click(function(e) {
                 e.preventDefault();
 
                 var inc_val = $('.qty-input').val();
@@ -124,8 +129,8 @@
                 }
             })
         })
-        $(function () {
-            $(document).on('click', '#capacity', function () {
+        $(function() {
+            $(document).on('click', '#capacity', function() {
                 $('.capacity-ml').removeClass('active')
 
                 $(this).addClass('active')
@@ -133,9 +138,11 @@
                 $.ajax({
                     type: 'GET',
                     url: "/test",
-                    data: {id},
+                    data: {
+                        id
+                    },
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         if (response.code === 200) {
                             $('#productPrice').text(response.data.price)
                             $('#stock_id').val(id)
@@ -143,7 +150,7 @@
                     }
                 });
             });
-            $(document).on('click', '#addtocart', function () {
+            $(document).on('click', '#addtocart', function() {
                 $.ajax({
                     type: 'GET',
                     url: "{{ route('add-to-cart') }}",
@@ -153,12 +160,11 @@
                         quantity: $('.qty-input').val()
                     },
                     dataType: 'json',
-                    success: function (response) {
+                    success: function(response) {
                         console.log(response)
                     }
                 });
             });
         })
-
     </script>
 @endsection
