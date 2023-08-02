@@ -94,8 +94,8 @@
                             <button class="input-group-text increment-btn">+</button>
                         </div>
                     </form>
-                    <div id="addtocart" class="btn">Add to cart</div>
                 </div>
+                <div id="addtocart" class="btn">Add to cart</div>
             </div>
         </div>
         {{--

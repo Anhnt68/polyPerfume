@@ -634,7 +634,7 @@
                                             <!-- product main photo -->
                                             <div class="product-item-gallery-main">
                                                 <a href="#"><img class="product-image-photo"
-                                                                 src="{{$product->Product->image}}" alt=""></a>
+                                                                 src="{{$product->image}}" alt=""></a>
                                                 <a href="quick-view.html" title="Quick View"
                                                    class="quick-view-link quick-view-btn"> <i
                                                         class="icon icon-eye"></i><span>Quick View</span></a>
@@ -672,7 +672,7 @@
                                     <!-- Product Details -->
                                     <div class="product-item-details">
                                         <div class="product-item-name"> <a title="Longline  asymmetric midi skirt"
-                                                                           href="{{route('product.detail', $product->id)}}" class="product-item-link">{{$product->Product->name}}</a>
+                                                                           href="{{route('product.detail', $product->id)}}" class="product-item-link">{{$product->name}}</a>
                                         </div>
                                         <div class="product-item-description">Neque porro quisquam est, qui
                                             dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed

@@ -2,21 +2,21 @@
 
 
 @section('content')\
-    <table>
+    <table class="table">
         <tr>
             <th>STT</th>
-            <th>quantity</th>
-            <th>product_id</th>
-            <th>capacity_id</th>
-            <th>user_id</th>
+            <th>Số lượng</th>
+            <th>Tên sản phẩm</th>
+            <th>Dung tích</th>
+            <th>Tên người đặt</th>
         </tr>
     @foreach($data as $key=>$value)
         <tr>
             <td>{{$key+1}}</td>
             <td>{{$value->quantity}}</td>
-            <td>{{$value->product_id}}</td>
-            <td>{{$value->capacity_id}}</td>
-            <td>{{$value->user_id}}</td>
+            <td>{{$value->Product->name}}</td>
+            <td>{{$value->Stock->Capacity->capacity_name}}ml</td>
+            <td>{{$value->User->name}}</td>
         </tr>
     @endforeach
     </table>
