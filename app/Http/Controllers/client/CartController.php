@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use PhpParser\Node\Scalar\String_;
 
 class CartController extends Controller
 {
@@ -14,18 +15,28 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
-        $request['user_id']=1;
+        $request['user_id'] = 1;
 
         Cart::create($request->all());
 
         return response()->json([
             'data' => $request->all(),
-            ]);
+        ]);
     }
 
-    public function viewCart(){
+
+    public function viewCart()
+    {
         $data = Cart::all();
-        return view('client.cart.viewcart',compact('data'));
+        return view('client.cart.viewcart', compact('data'));
+    }
+
+    public function delCart(string $id)
+    {
+//        dd(Cart::query()->find($id));
+        Cart::find($id)->delete();
+        return back();
+
     }
 
 //    public function index()

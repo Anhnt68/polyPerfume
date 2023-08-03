@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\client\HomeController;
+use App\Http\Controllers\client\CheckoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +25,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('test', [HomeController::class, 'getProductPrice'])->name('get-price');
 Route::get('add-to-cart', [\App\Http\Controllers\Client\CartController::class, 'addToCart'])->name('add-to-cart');
+Route::delete('del-cart/{id}', [\App\Http\Controllers\Client\CartController::class, 'delCart'])->name('del-cart');
 Route::get('view-cart', [\App\Http\Controllers\Client\CartController::class, 'viewCart'])->name('view-cart');
-
+Route::prefix('checkout')->name('checkout.')->group(function () {
+    Route::get('/', [CheckoutController::class, 'form'])->name('checkout');
+    Route::post('/', [CheckoutController::class, 'submit_form'])->name('checkout');
+    Route::get('/checkBill', [CheckoutController::class, 'checkBill'])->name('checkBill');
+    Route::get('/CheckProduct/{id}', [CheckoutController::class, 'getProducts'])->name('CheckProduct');
+});
 
 Route::prefix('product')->name('product.')->group(function () {
     Route::get('/detail/{id}', [HomeController::class, 'productDetail'])->name('detail');

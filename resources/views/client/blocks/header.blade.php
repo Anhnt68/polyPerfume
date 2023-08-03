@@ -108,7 +108,7 @@
                             <!-- /Header Links -->
                             <!-- Header Cart -->
                             <div class="header-link dropdown-link header-cart variant-1">
-                                <a href="#"> <i class="icon icon-cart"></i> <span class="badge">3</span><span
+                                <a href="{{route('view-cart')}}"> <i class="icon icon-cart"></i> <span class="badge">3</span><span
                                         class="link-text">My Cart</span></a>
                                 <!-- minicart wrapper -->
                                 <div class="dropdown-container right">

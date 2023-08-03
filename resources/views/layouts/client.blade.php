@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seikō HTML 5 eCommerce Responsive Theme</title>
+    <title>Poly Perfume</title>
     <meta name="author" content="SEIKO">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -115,22 +115,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <script src="{{ asset('assets/client/js/vendor/bootstrap/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/swiper/swiper.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/slick/slick.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/parallax/parallax.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/isotope/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/magnificpopup/dist/jquery.magnific-popup.js') }}"></script>
+{{--<script src="{{ asset('assets/client/js/vendor/swiper/swiper.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/slick/slick.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/parallax/parallax.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/isotope/isotope.pkgd.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/magnificpopup/dist/jquery.magnific-popup.js') }}"></script>--}}
 <script src="{{ asset('assets/client/js/vendor/countdown/jquery.countdown.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/nouislider/nouislider.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/ez-plus/jquery.ez-plus.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/tocca/tocca.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/bootstrap-tabcollapse/bootstrap-tabcollapse.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/scrollLock/jquery-scrollLock.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/darktooltip/dist/jquery.darktooltip.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/vendor/instafeed/instafeed.min.js') }}"></script>
+{{--<script src="{{ asset('assets/client/js/vendor/nouislider/nouislider.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/ez-plus/jquery.ez-plus.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/tocca/tocca.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/bootstrap-tabcollapse/bootstrap-tabcollapse.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/scrollLock/jquery-scrollLock.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/darktooltip/dist/jquery.darktooltip.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/client/js/vendor/instafeed/instafeed.min.js') }}"></script>--}}
 <script src="{{ asset('assets/client/js/megamenu.min.js') }}"></script>
-<script src="{{ asset('assets/client/js/tools.min.js') }}"></script>
+{{--<script src="{{ asset('assets/client/js/tools.min.js') }}"></script>--}}
 <script src="{{ asset('assets/client/js/app.js') }}"></script>
 <script>
     $.ajaxSetup({
