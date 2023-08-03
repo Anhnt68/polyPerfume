@@ -11,25 +11,30 @@
                         <tr class="form-group">
                             <td>Họ tên</td>
                             <td><input type="text" name="order_name" class="form-control" placeholder="Họ tên ..."
-                                       value="{{ Auth::user()->name }}"></td>
+                                    value="{{ Auth::user()->name }}"></td>
                         </tr>
                         <tr class="form-group">
                             <td>Email</td>
                             <td><input type="email" name="order_email" class="form-control" placeholder="Email..."
-                                       value="{{ Auth::user()->email }}"></td>
+                                    value="{{ Auth::user()->email }}"></td>
                         </tr>
                         <tr class="form-group">
                             <td>Số điện thoại</td>
                             <td><input type="text" name="order_phone" class="form-control"
-                                       placeholder="Số điện thoại ..." value="{{ Auth::user()->phone }}"></td>
+                                    placeholder="Số điện thoại ..." value="{{ Auth::user()->phone }}"></td>
                         </tr>
                         <tr class="form-group">
                             <td>Địa chỉ</td>
                             <td><input type="text" name="order_address" class="form-control" placeholder="Địa chỉ ..."
-                                       value="{{ Auth::user()->address }}"></td>
+                                    value="{{ Auth::user()->address }}"></td>
+
                         </tr>
-
-
+                        <input type="text" value="{{Auth::user()->id}}" name="user_id" hidden>
+                        @foreach ($data as $item)
+                            <input type="text" value="{{$item->id}}" name="cart_id" hidden>
+                            <input type="text" value="{{ $item->quantity}}" name="sum_quantity"hidden>
+                            <input type="text" value="{{ $item->quantity * $item->Stock->price }}" name="sum_price"hidden>
+                        @endforeach
                         <tr>
                             <td>
                                 <button type="submit" class="btn btn-primary">Đặt hàng</button>
@@ -45,7 +50,7 @@
 
                         <div class="form-check mt-3">
                             <input class="form-check-input" id="check1" type="radio" value="0" checked
-                                   name="check" />
+                                name="check" />
                             <label class="form-check-label">
                                 Thanh toán khi nhận hàng
                             </label>
@@ -62,29 +67,38 @@
             </div>
             <div class="col-md-6">
                 <h2 class="py-4">Đơn hàng của bạn</h2>
+                @php
+                    $money = 0;
+                @endphp
                 @foreach ($data as $item)
                     <div class="row border">
-                        <div class="col-md-4"><img src="{{$item->Product->image}}" alt=""
-                                                   style="width: 150px;height: 150px;"></div>
+                        <div class="col-md-4"><img src="{{ $item->Product->image }}" alt=""
+                                style="width: 150px;height: 150px;"></div>
                         <div class="col-md-8">
 
-                            
+
                             <div class="product">
-                                <p class="title-product">Tên sản phẩm: {{$item->Product->name}}</p>
-                                <p class="product-quantity">Số lượng: {{$item->quantity}}</p>
-                                <p class="">Giá tiền: {{$item->Stock->price}}
+                                <p class="title-product">Tên sản phẩm: {{ $item->Product->name }}</p>
+                                <p>Dung tích: {{$item->Stock->Capacity->capacity_name}}ml</p>
+                                <p class="product-quantity">Số lượng: {{ $item->quantity }}</p>
+                                <p class="">Giá tiền: {{ $item->Stock->price }}
                                     đ</p>
-                                <p >Thành
-                                    tiền: <span id="thtien">{{($item->quantity * $item->Stock->price)}}</span>d
-                                    
+                                <p>Thành
+                                    tiền: <span id="thtien">{{ $item->quantity * $item->Stock->price }}</span>d
                                 </p>
+
+                                @php
+                                
+                                $money +=  $item->quantity * $item->Stock->price; 
+                                @endphp
                             </div>
                             
+
                         </div>
                     </div>
-                    @endforeach
-                <div class="product-sum fs-5" >Tổng tiền: <span
-                            class="fs-4 mx-5" id="tongtien"></span></div>
+                @endforeach
+                {{$money}}
+                <div class="product-sum fs-5">Tổng tiền: <span class="fs-4 mx-5" id="tongtien"></span></div>
 
             </div>
         </div>
@@ -92,5 +106,4 @@
     <script>
         document.getElementById("tongtien").innerHTML = document.getElementById("thtien").innerHTML;
     </script>
-    @endsection
-    
+@endsection
