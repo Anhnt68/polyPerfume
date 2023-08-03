@@ -28,7 +28,7 @@ Route::get('add-to-cart', [\App\Http\Controllers\Client\CartController::class, '
 Route::delete('del-cart/{id}', [\App\Http\Controllers\Client\CartController::class, 'delCart'])->name('del-cart');
 Route::get('view-cart', [\App\Http\Controllers\Client\CartController::class, 'viewCart'])->name('view-cart');
 Route::prefix('checkout')->name('checkout.')->group(function () {
-    Route::get('/', [CheckoutController::class, 'form'])->name('checkout');
+    Route::get('/{id}', [CheckoutController::class, 'form'])->name('checkoutget');
     Route::post('/', [CheckoutController::class, 'submit_form'])->name('checkout');
     Route::get('/checkBill', [CheckoutController::class, 'checkBill'])->name('checkBill');
     Route::get('/CheckProduct/{id}', [CheckoutController::class, 'getProducts'])->name('CheckProduct');

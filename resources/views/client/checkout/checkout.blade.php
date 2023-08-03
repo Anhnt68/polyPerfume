@@ -11,22 +11,22 @@
                         <tr class="form-group">
                             <td>Họ tên</td>
                             <td><input type="text" name="order_name" class="form-control" placeholder="Họ tên ..."
-                                       value=""></td>
+                                       value="{{ Auth::user()->name }}"></td>
                         </tr>
                         <tr class="form-group">
                             <td>Email</td>
                             <td><input type="email" name="order_email" class="form-control" placeholder="Email..."
-                                       value=""></td>
+                                       value="{{ Auth::user()->email }}"></td>
                         </tr>
                         <tr class="form-group">
                             <td>Số điện thoại</td>
                             <td><input type="text" name="order_phone" class="form-control"
-                                       placeholder="Số điện thoại ..." value=""></td>
+                                       placeholder="Số điện thoại ..." value="{{ Auth::user()->phone }}"></td>
                         </tr>
                         <tr class="form-group">
                             <td>Địa chỉ</td>
                             <td><input type="text" name="order_address" class="form-control" placeholder="Địa chỉ ..."
-                                       value=""></td>
+                                       value="{{ Auth::user()->address }}"></td>
                         </tr>
 
 
@@ -62,27 +62,35 @@
             </div>
             <div class="col-md-6">
                 <h2 class="py-4">Đơn hàng của bạn</h2>
+                @foreach ($data as $item)
                     <div class="row border">
-                        <div class="col-md-4"><img src="" alt=""
+                        <div class="col-md-4"><img src="{{$item->Product->image}}" alt=""
                                                    style="width: 150px;height: 150px;"></div>
                         <div class="col-md-8">
 
+                            
                             <div class="product">
-                                <p class="title-product"></p>
-                                <p class="product-quantity">Số lượng: </p>
-                                <p class="">Giá tiền:
+                                <p class="title-product">Tên sản phẩm: {{$item->Product->name}}</p>
+                                <p class="product-quantity">Số lượng: {{$item->quantity}}</p>
+                                <p class="">Giá tiền: {{$item->Stock->price}}
                                     đ</p>
-                                <p>Thành
-                                    tiền:
-                                    đ
+                                <p >Thành
+                                    tiền: <span id="thtien">{{($item->quantity * $item->Stock->price)}}</span>d
+                                    
                                 </p>
                             </div>
+                            
                         </div>
                     </div>
-                <div class="product-sum fs-5">Tổng tiền: <span
-                            class="fs-4 mx-5">đ</span></div>
+                    @endforeach
+                <div class="product-sum fs-5" >Tổng tiền: <span
+                            class="fs-4 mx-5" id="tongtien"></span></div>
 
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("tongtien").innerHTML = document.getElementById("thtien").innerHTML;
+    </script>
     @endsection
+    

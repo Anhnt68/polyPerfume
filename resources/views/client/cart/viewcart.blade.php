@@ -34,5 +34,5 @@
         </tr>
     @endforeach
     </table>
-<a href="{{route('checkout.checkout')}}">Đặt hàng</a>
+<a href="{{route('checkout.checkoutget', Auth::user()->id)}}">Đặt hàng</a>
 @endsection
