@@ -99,7 +99,9 @@
             </div>
         </div>
         {{--
-        price
+        em muon khi them 1 san pham vao gio hang thi phai load lai trang detail
+        :v load gio hang - cart a?
+        khoong l
         --}}
     @endforeach
 @endsection
@@ -151,17 +153,24 @@
                 });
             });
             $(document).on('click', '#addtocart', function() {
+                const stock_id  =$('#stock_id').val();
+                if(!stock_id) {
+                    alert('Vui lòng chọn ml.')
+                    return false;
+                }
                 $.ajax({
                     type: 'GET',
                     url: "{{ route('add-to-cart') }}",
                     data: {
                         product_id: $('#product_id').val(),
-                        stock_id: $('#stock_id').val(),
+                        stock_id: stock_id,
                         quantity: $('.qty-input').val()
                     },
                     dataType: 'json',
                     success: function(response) {
                         console.log(response)
+                        location.reload();
+
                     }
                 });
             });

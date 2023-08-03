@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //dd(bcrypt('123456'));
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('test', [HomeController::class, 'getProductPrice'])->name('get-price');
 Route::get('add-to-cart', [\App\Http\Controllers\Client\CartController::class, 'addToCart'])->name('add-to-cart');
 Route::delete('del-cart/{id}', [\App\Http\Controllers\Client\CartController::class, 'delCart'])->name('del-cart');
@@ -33,6 +33,12 @@ Route::prefix('checkout')->name('checkout.')->group(function () {
     Route::get('/checkBill', [CheckoutController::class, 'checkBill'])->name('checkBill');
     Route::get('/CheckProduct/{id}', [CheckoutController::class, 'getProducts'])->name('CheckProduct');
 });
+Route::prefix('bill')->name('bill.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\client\BillController::class, 'getBill'])->name('bill');
+    Route::get('/billProduct/{id}', [\App\Http\Controllers\client\BillController::class, 'billProduct'])->name('bill-product');
+//    Route::get('/CheckProduct/{id}', [CheckoutController::class, 'getProducts'])->name('CheckProduct');
+});
+
 
 Route::prefix('product')->name('product.')->group(function () {
     Route::get('/detail/{id}', [HomeController::class, 'productDetail'])->name('detail');
@@ -103,6 +109,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit');
         Route::post('/update/{id}', [ProductController::class, 'update'])->name('post-edit');
         Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('delete');
+    });
+    Route::prefix('bill')->name('bill.')->group(function () {
+        Route::get('/', [\App\Http\Controllers\BillController::class, 'getBill'])->name('bill');
+        Route::get('/billProduct/{id}', [\App\Http\Controllers\BillController::class, 'billProduct'])->name('bill-product');
+        Route::get('/edit/{id}', [\App\Http\Controllers\BillController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [\App\Http\Controllers\BillController::class, 'update'])->name('update');
     });
 });
 

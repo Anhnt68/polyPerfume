@@ -15,9 +15,22 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
-        $request['user_id'] = 1;
+        $request['user_id'] = auth()->id();
 
-        Cart::create($request->all());
+        $cart = Cart::query();
+
+        $checkProductExists = $cart->where([
+            'product_id' => $request['product_id'],
+            'stock_id' => $request['stock_id'],
+        ])->first();
+
+        if (!$checkProductExists) {
+            $cart->create($request->all());
+        } else {
+            $checkProductExists->update([
+                'quantity' => $checkProductExists->quantity +$request['quantity']
+            ]);
+        }
 
         return response()->json([
             'data' => $request->all(),
@@ -27,7 +40,8 @@ class CartController extends Controller
 
     public function viewCart()
     {
-        $data = Cart::all();
+        $id = auth()->user()->id;
+        $data = Cart::query()->where('user_id',$id)->get();
         return view('client.cart.viewcart', compact('data'));
     }
 

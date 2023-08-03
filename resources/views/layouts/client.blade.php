@@ -42,22 +42,7 @@
     <link
             href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Raleway:100,100i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i"
             rel="stylesheet">
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '../../../www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-88345127-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 
     @stack('style')
 </head>
@@ -115,22 +100,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <script src="{{ asset('assets/client/js/vendor/bootstrap/bootstrap.min.js') }}"></script>
-{{--<script src="{{ asset('assets/client/js/vendor/swiper/swiper.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/slick/slick.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/parallax/parallax.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/isotope/isotope.pkgd.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/magnificpopup/dist/jquery.magnific-popup.js') }}"></script>--}}
+<script src="{{ asset('assets/client/js/vendor/swiper/swiper.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/slick/slick.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/parallax/parallax.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/magnificpopup/dist/jquery.magnific-popup.js') }}"></script>
 <script src="{{ asset('assets/client/js/vendor/countdown/jquery.countdown.min.js') }}"></script>
-{{--<script src="{{ asset('assets/client/js/vendor/nouislider/nouislider.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/ez-plus/jquery.ez-plus.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/tocca/tocca.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/bootstrap-tabcollapse/bootstrap-tabcollapse.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/scrollLock/jquery-scrollLock.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/darktooltip/dist/jquery.darktooltip.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/client/js/vendor/instafeed/instafeed.min.js') }}"></script>--}}
+<script src="{{ asset('assets/client/js/vendor/nouislider/nouislider.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/ez-plus/jquery.ez-plus.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/tocca/tocca.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/bootstrap-tabcollapse/bootstrap-tabcollapse.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/scrollLock/jquery-scrollLock.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/darktooltip/dist/jquery.darktooltip.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/client/js/vendor/instafeed/instafeed.min.js') }}"></script>
 <script src="{{ asset('assets/client/js/megamenu.min.js') }}"></script>
-{{--<script src="{{ asset('assets/client/js/tools.min.js') }}"></script>--}}
+<script src="{{ asset('assets/client/js/tools.min.js') }}"></script>
 <script src="{{ asset('assets/client/js/app.js') }}"></script>
 <script>
     $.ajaxSetup({

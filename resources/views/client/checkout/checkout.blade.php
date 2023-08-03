@@ -30,16 +30,10 @@
 
                         </tr>
                         <input type="text" value="{{Auth::user()->id}}" name="user_id" hidden>
-                        @foreach ($data as $item)
-                            <input type="text" value="{{$item->id}}" name="cart_id" hidden>
-                            <input type="text" value="{{ $item->quantity}}" name="sum_quantity"hidden>
-                            <input type="text" value="{{ $item->quantity * $item->Stock->price }}" name="sum_price"hidden>
-                        @endforeach
                         <tr>
                             <td>
                                 <button type="submit" class="btn btn-primary">Đặt hàng</button>
                                 @csrf
-
                             </td>
 
                         </tr>
@@ -50,13 +44,13 @@
 
                         <div class="form-check mt-3">
                             <input class="form-check-input" id="check1" type="radio" value="0" checked
-                                name="check" />
+                                name="order_PTTT" />
                             <label class="form-check-label">
                                 Thanh toán khi nhận hàng
                             </label>
                         </div>
                         <div class="form-check mt-3">
-                            <input class="form-check-input" id="check1" type="radio" value="1" name="check" />
+                            <input class="form-check-input" id="check1" type="radio" value="1" name="order_PTTT" />
                             <label class="form-check-label">
                                 Chuyển Khoản
                             </label>
