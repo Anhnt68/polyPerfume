@@ -41,11 +41,10 @@ class CheckoutController extends Controller
             orderDetail::query()->create($cart);
         }
         $auth = auth()->user();
-        Mail::send('client.emails.sendemail', compact('order', 'auth'), function ($email) use ($auth, $request) {
+        Mail::send('client.emails.sendemail', compact('order', 'auth', 'cart'), function ($email) use ($auth, $request) {
             $email->subject('Shopping');
             $email->to($request['order_email'], $auth->name);
         });
-
         Cart::where('user_id', $request->user_id)->delete();
         return view('client.checkout.thankyou');
 

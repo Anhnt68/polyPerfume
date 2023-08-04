@@ -55,7 +55,7 @@ class HomeController extends Controller
         $searchTerm = $request->search;
         $data = Products::where('name', 'LIKE', "%{$searchTerm}%")
             ->get(); 
-        return view('client.products.search',compact('data'));   
+        return view('client.products.search',compact('data', 'searchTerm'));   
     }
     public function test() {
 

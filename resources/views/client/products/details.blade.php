@@ -6,12 +6,15 @@
             background: #32d0c6;
             color: white;
         }
-        .sp{
+
+        .sp {
             padding-left: 50px
         }
-        #capacity{
+
+        #capacity {
             margin-bottom: 20px;
         }
+
         .promo {
             position: relative;
         }
@@ -77,31 +80,37 @@
             <input type="hidden" id="stock_id" value="">
 
             <div class="col-6">
-                <img src="{{ $value->image }}" width="100%">
+                <img src="{{ $value->image }}" width="500px" height="500px">
             </div>
             <div class="col-6 sp">
                 <div>
-                    <h1 id="name"> {{ $value->name }}</h1>
-                    <h2  id="productPrice" style="color: red">{{ $value->stocks[0]->price }}₫</h2>
-                    <h3 >Dung tích</h3 ><br>
+                    <h1 id="name" style="text-transform: none"> {{ $value->name }}</h1>
+                    <p>{!! $value->desc !!}</p>
+                    <h2 id="productPrice" style="color: red">{{ number_format($value->stocks[0]->price, 0, '', ',') }}₫</h2>
+                    <h3>Dung tích</h3><br>
                     @foreach ($value->stocks as $capa)
                         <span data-id="{{ $capa->id }}" id="capacity" class="p-3 border capacity-ml">
                             {{ $capa->Capacity->capacity_name }} ml</span>
                     @endforeach
-                </div >
-                <br><form action="">
-                        <h3>Số lượng</h3 >
-                        <div class="input-group text-center mb-3" style="width: 100px; ">
-                            <button class="input-group-text decrement-btn">-</button>
-                            <input type="text" name="quantity" id="" class="form-control text-center qty-input"
-                                value="1">
-                            <button class="input-group-text increment-btn">+</button>
-                        </div>
-                    </form>
-                    <div id="addtocart" class="btn" >Add to cart</div>
                 </div>
-                
+                <br>
+                <form action="">
+                    <h3>Số lượng</h3>
+                    <div class="mb-3 d-flex justify-content-between" style="width: 100px; ">
+                        <button class="input-group-text decrement-btn" style="width: 40px; height: 40px">-</button>
+                        <input type="text" name="quantity" id="" class="form-control text-center qty-input"
+                            value="1">
+                        <button class="input-group-text increment-btn" style="width: 40px; height: 40px">+</button>
+                    </div>
+                </form>
+                @if (Auth::user())
+                    <div id="addtocart" class="btn">Add to cart</div>
+                @else
+                    <div><a class="btn" href="{{ route('loginUser') }}">Add to cart</a></div>
+                @endif
             </div>
+
+        </div>
         </div>
         {{--
         em muon khi them 1 san pham vao gio hang thi phai load lai trang detail
@@ -158,8 +167,8 @@
                 });
             });
             $(document).on('click', '#addtocart', function() {
-                const stock_id  =$('#stock_id').val();
-                if(!stock_id) {
+                const stock_id = $('#stock_id').val();
+                if (!stock_id) {
                     alert('Vui lòng chọn ml.')
                     return false;
                 }

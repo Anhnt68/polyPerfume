@@ -29,7 +29,7 @@
                                     value="{{ Auth::user()->address }}"></td>
 
                         </tr>
-                        <input type="text" value="{{Auth::user()->id}}" name="user_id" hidden>
+                        <input type="text" value="{{ Auth::user()->id }}" name="user_id" hidden>
                         <tr>
                             <td>
                                 <button type="submit" class="btn btn-primary">Đặt hàng</button>
@@ -50,7 +50,8 @@
                             </label>
                         </div>
                         <div class="form-check mt-3">
-                            <input class="form-check-input" id="check1" type="radio" value="1" name="order_PTTT" />
+                            <input class="form-check-input" id="check1" type="radio" value="1"
+                                name="order_PTTT" />
                             <label class="form-check-label">
                                 Chuyển Khoản
                             </label>
@@ -72,32 +73,32 @@
 
 
                             <div class="product">
-                                <p class="title-product">Tên sản phẩm: {{ $item->Product->name }}</p>
-                                <p>Dung tích: {{$item->Stock->Capacity->capacity_name}}ml</p>
+                                <h2 style="text-transform: none" class="title-product">{{ $item->Product->name }}</h2>
+                                <p>Dung tích: {{ $item->Stock->Capacity->capacity_name }}ml</p>
                                 <p class="product-quantity">Số lượng: {{ $item->quantity }}</p>
-                                <p class="">Giá tiền: {{ $item->Stock->price }}
+                                <p class="">Giá tiền: {{ number_format($item->Stock->price, 0, '', ',') }}
                                     đ</p>
                                 <p>Thành
-                                    tiền: <span id="thtien">{{ $item->quantity * $item->Stock->price }}</span>d
+                                    tiền: <span
+                                        id="thtien">{{ number_format($item->quantity * $item->Stock->price, 0, '', ',') }}</span>đ
                                 </p>
 
                                 @php
-                                
-                                $money +=  $item->quantity * $item->Stock->price; 
+                                    
+                                    $money += $item->quantity * $item->Stock->price;
                                 @endphp
                             </div>
-                            
+
 
                         </div>
                     </div>
                 @endforeach
-                {{$money}}
-                <div class="product-sum fs-5">Tổng tiền: <span class="fs-4 mx-5" id="tongtien"></span></div>
+                <div class="product-sum fs-5"><span class="fs-4 mx-5" id="tongtien"
+                        style="font-weight: bold; font-size: 30px;">Tổng tiền:
+                        {{ number_format($money, 0, '', ',') }}đ</span></div>
 
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById("tongtien").innerHTML = document.getElementById("thtien").innerHTML;
-    </script>
+    <script></script>
 @endsection

@@ -7,8 +7,8 @@
             <input type="hidden" name="id" value="{{ $data->id }}" class="d-none">
             <div class="form-group">
                 <label for="simpleinput">Dung tích</label>
-                <input type="text" name="capacity_name" id="simpleinput" class="form-control" placeholder="Enter your text"
-                    value="{{ $data->capacity_name }}">
+                <input type="text" name="capacity_name" id="simpleinput" class="form-control"
+                    placeholder="Enter your text" value="{{ $data->capacity_name }}">
                 @error('capacity_name')
                     <span style="color: red">{{ $message }}</span>
                 @enderror

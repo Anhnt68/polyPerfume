@@ -1,8 +1,4 @@
 <x-guest-layout>
-    <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-        {{-- <img src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
-        <h1>Chào mừng bạn đến với trang admin</h1>
-    </div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}

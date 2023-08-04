@@ -1,18 +1,14 @@
 <x-guest-layout>
-    <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-        {{-- <img src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
-        <h1>Chào mừng bạn đến với trang admin</h1>
-    </div>
     <div class="formbg">
         <div class="formbg-inner padding-horizontal--48">
             <span class="padding-bottom--15">Đăng kí</span>
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('registerUser') }}">
                 @csrf
                 <!-- Name -->
                 <div class="field padding-bottom--24">
                     <label for="email">Name</label>
                     <input type="text" name="name" placeholder="Name ..." value="{{ old('name') }}">
-                    <x-input-error :messages="$errors->get('email')" class="mt-2" style="color: red" />
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" style="color: red"/>
                 </div>
                 <!-- Email Address -->
                 <div class="field padding-bottom--24">
@@ -34,8 +30,7 @@
                 <div class="mt-4">
                     <div class="field padding-bottom--24">
                         <label for="email">Confirm Password</label>
-                        <input type="password" name="password_confirmation" placeholder="Confirm Password ..."
-                            value="{{ old('password_confirmation') }}">
+                        <input type="password" name="password_confirmation" placeholder="Confirm Password ..." value="{{ old('password_confirmation') }}">
                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" style="color: red" />
                     </div>
                 </div>
@@ -58,7 +53,7 @@
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
-
+                    
                     <div class="field padding-bottom--24">
                         <input type="submit" name="submit" value="Đăng kí">
                     </div>
@@ -67,9 +62,9 @@
                     </x-primary-button> --}}
                 </div>
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    href="{{ route('loginUser') }}">
-                    {{ __('Bạn đã có tài khoản rồi?') }}
-                </a>
+                        href="{{ route('loginUser') }}">
+                        {{ __('Bạn đã có tài khoản rồi?') }}
+                    </a>
             </form>
         </div>
     </div>
