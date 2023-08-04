@@ -110,7 +110,7 @@
         <div class="container">
             <!-- Wellcome text -->
             <div class="text-center bottom-space">
-                <h1 class="size-lg no-padding">WELCOME TO <span class="logo-font custom-color">Seikō</span>
+                <h1 class="size-lg no-padding">WELCOME TO <span class="logo-font custom-color">PolyPerfume</span>
                     STORE</h1>
                 <div class="line-divider"></div>
                 <p class="custom-color-alt">Lorem ipsum dolor sit amet, ex eam mundi populo accusamus,
@@ -151,6 +151,23 @@
     </div>
     <div class="block">
         <div class="container">
+            <h1>Danh mục</h1>
+            <div class="row">
+                @foreach ($model as $cate )
+                <div class="col-3">
+                    <img src="{{$cate->image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h2 class="card-title">{{$cate->cate_name}}</h2>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        
+        <div class="container">
+            <h1>SẢN PHẨM</h1>
             <ul class="filters filters-product style2">
                 {{-- <li><a href="#" class="filter-label">All<span class="count"></span></a></li>
                 <li><a href="#" class="filter-label active" data-filter=".category1">New<span
@@ -158,571 +175,51 @@
                 <li><a href="#" class="filter-label" data-filter=".category2">Sale<span class="count"></span></a>
                 </li> --}}
             </ul>
-            <div class="products-grid-wrapper isotope-wrapper">
-                <div class="products-grid isotope four-in-row product-variant-4">
+            {{-- <div class="products-grid-wrapper isotope-wrapper"> products-grid isotope four-in-row product-variant-4 --}}
+                <div class="row">
                     <!-- Product Item -->
-                    <div class="product-item large category2">
-                        <div class="product-item-inside">
-                            <div class="product-item-info">
-                                <!-- Product Photo -->
-                                <div class="product-item-photo">
-                                    <!-- Product Label -->
-                                    <div class="product-item-label label-sale"><span>-20%</span></div>
-                                    <!-- /Product Label -->
-                                    <!-- product main photo -->
-                                    <div class="product-item-gallery-main">
-                                        <a href="#"><img class="product-image-photo"
-                                                src="images/products/product-16-c1.jpg" alt=""></a>
-                                        <a href="quick-view.html" title="Quick View"
-                                            class="quick-view-link quick-view-btn"> <i
-                                                class="icon icon-eye"></i><span>Quick View</span></a>
-                                    </div>
-                                    <!-- /product main photo  -->
-                                    <div class="countdown-box hidden-xs">
-                                        <div class="countdown-wrapper">
-                                            <div class="countdown-title">special price expires in</div>
-                                            <div class="countdown" data-promodate="2016/12/01"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Product Actions -->
-                                    <a href="#" title="Add to Wishlist" class="wishlist active">
-                                        <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                    <div class="product-item-actions">
-                                        <div class="share-button toBottom">
-                                            <span class="toggle"></span>
-                                            <ul class="social-list">
-                                                <li>
-                                                    <a href="#" class="icon icon-google google"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-fancy fancy"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-pinterest pinterest"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-twitter-logo twitter"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-facebook-logo facebook"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- /Product Actions -->
-                                </div>
-                                <!-- /Product Photo -->
-                                <!-- Product Details -->
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a title="Long sleeve overall" href="product.html"
-                                            class="product-item-link">Long sleeve
-                                            overall</a></div>
-                                    <div class="product-item-description">Neque porro quisquam est, qui
-                                        dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                                        quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                    <div class="price-box"> <span class="price-container"> <span class="price-wrapper">
-                                                <span class="old-price">$190.00</span> <span
-                                                    class="special-price">$149.00</span> </span>
-                                        </span>
-                                    </div>
-                                    <ul class="color-swatch hidden-xs">
-                                        <li class="active">
-                                            <a data-image="images/products/product-16-c1.jpg" href="#"><img
-                                                    src="images/colorswatch/color-blue.png" alt="Blue"></a>
-                                        </li>
-                                        <li>
-                                            <a data-image="images/products/product-16-c2.jpg" href="#"><img
-                                                    src="images/colorswatch/color-grey.png" alt="Gray"></a>
-                                        </li>
-                                        <li>
-                                            <a data-image="images/products/product-16-c3.jpg" href="#"><img
-                                                    src="images/colorswatch/color-red.png" alt="Red"></a>
-                                        </li>
-                                        <li>
-                                            <a data-image="images/products/product-16-c4.jpg" href="#"><img
-                                                    src="images/colorswatch/color-violet.png" alt="Violet"></a>
-                                        </li>
-                                        <li>
-                                            <a data-image="images/products/product-16-c5.jpg" href="#"><img
-                                                    src="images/colorswatch/color-green.png" alt="Green"></a>
-                                        </li>
-                                    </ul>
-                                    <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
-                                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
-                                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                    <button class="btn add-to-cart" data-product="789123"> <i
-                                            class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                </div>
-                                <!-- /Product Details -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Product Item -->
-                    <!-- Product Item -->
-                        <div class="product-item previews-3 large category1">
-                            <div class="product-item-inside">
-                                <div class="product-item-info">
-                                    <!-- Product Photo -->
-                                    <div class="product-item-photo">
-                                        <!-- Product Label -->
-                                        <div class="product-item-label label-new"><span>New</span></div>
-                                        <!-- /Product Label -->
-                                        <!-- product main photo -->
-                                        <div class="product-item-gallery-main">
-                                            <a href="#"><img class="product-image-photo"
-                                                             src="" alt=""></a>
-                                            <a href="quick-view.html" title="Quick View"
-                                               class="quick-view-link quick-view-btn"> <i
-                                                    class="icon icon-eye"></i><span>Quick View</span></a>
-                                        </div>
-                                        <!-- /product main photo  -->
-                                        <!-- Product Actions -->
-                                        <a href="#" title="Add to Wishlist" class="no_wishlist"> <i
-                                                class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                        <div class="product-item-actions">
-                                            <div class="share-button toBottom">
-                                                <span class="toggle"></span>
-                                                <ul class="social-list">
-                                                    <li>
-                                                        <a href="#" class="icon icon-google google"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-fancy fancy"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-pinterest pinterest"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-twitter-logo twitter"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-facebook-logo facebook"></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- /Product Actions -->
-                                        <!-- product carousel -->
-                                        <div class="product-item-gallery-previews-wrapper">
-                                            <div class="product-item-gallery-previews">
-                                                <div class="item">
-                                                    <a href="#"><img src="images/products/product-20.jpg"
-                                                                     data-image="images/products/product-20.jpg" alt=""></a>
-                                                </div>
-                                                <div class="item">
-                                                    <a href="#"><img src="images/products/product-20-1.jpg"
-                                                                     data-image="images/products/product-20-1.jpg" alt=""></a>
-                                                </div>
-                                                <div class="item">
-                                                    <a href="#"><img src="images/products/product-20-2.jpg"
-                                                                     data-image="images/products/product-20-2.jpg" alt=""></a>
-                                                </div>
-                                            </div>
-                                            <div class="carousel-arrows"></div>
-                                        </div>
-                                        <!-- /product carousel -->
-                                    </div>
-                                    <!-- /Product Photo -->
-                                    <!-- Product Details -->
-                                    <div class="product-item-details">
-                                        <div class="product-item-name"> <a title="Lace back mini dress" href="product.html"
-                                                                           class="product-item-link"></a> </div>
-                                        <div class="product-item-description">Neque porro quisquam est, qui
-                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                                            quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                        <div class="price-box"> <span class="price-container"> <span
-                                                    class="price-wrapper"><span class="price">$239.00</span>
-                                            </span>
-                                        </span>
-                                        </div>
-                                        <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
-                                                class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
-                                                class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                        <button class="btn add-to-cart" data-product="789123"> <i
-                                                class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                    </div>
-                                    <!-- /Product Details -->
-                                </div>
-                            </div>
-                        </div>
-
-                    <!-- /Product Item -->
-                    <!-- Product Item -->
-                    <div class="product-item previews-3 large category2">
-                        <div class="product-item-inside">
-                            <div class="product-item-info">
-                                <!-- Product Photo -->
-                                <div class="product-item-photo">
-                                    <!-- Product Label -->
-                                    <div class="product-item-label label-sale"><span>-20%</span></div>
-                                    <!-- /Product Label -->
-                                    <div class="product-item-gallery">
-                                        <!-- product main photo -->
-                                        <div class="product-item-gallery-main">
-                                            <a href="#"><img class="product-image-photo"
-                                                    src="images/products/product-26.jpg" alt=""></a>
-                                            <a href="quick-view.html" title="Quick View"
-                                                class="quick-view-link quick-view-btn"> <i
-                                                    class="icon icon-eye"></i><span>Quick View</span></a>
-                                        </div>
-                                        <!-- /product main photo  -->
-                                    </div>
-                                    <div class="countdown-box hidden-xs">
-                                        <div class="countdown-wrapper">
-                                            <div class="countdown-title">special price expires in</div>
-                                            <div class="countdown" data-promoperiod="100000000"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Product Actions -->
-                                    <!-- Product Actions -->
-                                    <a href="#" title="Add to Wishlist" class="no_wishlist"> <i
-                                            class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                    <div class="product-item-actions">
-                                        <div class="share-button toBottom">
-                                            <span class="toggle"></span>
-                                            <ul class="social-list">
-                                                <li>
-                                                    <a href="#" class="icon icon-google google"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-fancy fancy"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-pinterest pinterest"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-twitter-logo twitter"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-facebook-logo facebook"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- /Product Actions -->
-                                    <!-- product carousel -->
-                                    <div class="product-item-gallery-previews-wrapper">
-                                        <div class="product-item-gallery-previews">
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-26.jpg"
-                                                        data-image="images/products/product-26.jpg" alt=""></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-26-1.jpg"
-                                                        data-image="images/products/product-26-1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-26-2.jpg"
-                                                        data-image="images/products/product-26-2.jpg" alt=""></a>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-arrows"></div>
-                                    </div>
-                                    <!-- /product carousel -->
-                                </div>
-                                <!-- /Product Photo -->
-                                <!-- Product Details -->
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a title="Grey T-shirt fashion Sportex"
-                                            href="product.html" class="product-item-link">Grey T-shirt
-                                            fashion Sportex</a> </div>
-                                    <div class="product-item-description">Neque porro quisquam est, qui
-                                        dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                                        quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                    <div class="price-box"> <span class="price-container"> <span class="price-wrapper">
-                                                <span class="old-price">$300.00</span> <span
-                                                    class="special-price">$249.00</span> </span>
-                                        </span>
-                                    </div>
-                                    <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
-                                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
-                                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                    <button class="btn add-to-cart" data-product="789123"> <i
-                                            class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                </div>
-                                <!-- /Product Details -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Product Item -->
-                    <!-- Product Item -->
-                    <div class="product-item previews-2 large category1 category2">
-                        <div class="product-item-inside">
-                            <div class="product-item-info">
-                                <!-- Product Photo -->
-                                <div class="product-item-photo">
-                                    <!-- Product Label -->
-                                    <div class="product-item-label label-new"><span>New</span></div>
-                                    <div class="product-item-label label-sale"><span>-20%</span></div>
-                                    <!-- /Product Label -->
-                                    <!-- product main photo -->
-                                    <div class="product-item-gallery-main">
-                                        <a href="#"><img class="product-image-photo"
-                                                src="images/products/product-25.jpg" alt=""></a>
-                                        <a href="quick-view.html" title="Quick View"
-                                            class="quick-view-link quick-view-btn"> <i
-                                                class="icon icon-eye"></i><span>Quick View</span></a>
-                                    </div>
-                                    <!-- /product main photo  -->
-                                    <div class="countdown-box hidden-xs">
-                                        <div class="countdown-wrapper">
-                                            <div class="countdown-title">special price expires in</div>
-                                            <div class="countdown" data-promodate="2016/12/01"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Product Actions -->
-                                    <a href="#" title="Add to Wishlist" class="no_wishlist"> <i
-                                            class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                    <div class="product-item-actions">
-                                        <div class="share-button toBottom">
-                                            <span class="toggle"></span>
-                                            <ul class="social-list">
-                                                <li>
-                                                    <a href="#" class="icon icon-google google"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-fancy fancy"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-pinterest pinterest"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-twitter-logo twitter"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-facebook-logo facebook"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- /Product Actions -->
-                                    <!-- product carousel -->
-                                    <div class="product-item-gallery-previews-wrapper">
-                                        <div class="product-item-gallery-previews">
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-25.jpg"
-                                                        data-image="images/products/product-25.jpg" alt=""></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-25-1.jpg"
-                                                        data-image="images/products/product-25-1.jpg" alt=""></a>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-arrows"></div>
-                                    </div>
-                                    <!-- /product carousel -->
-                                </div>
-                                <!-- /Product Photo -->
-                                <!-- Product Details -->
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a title="Mesh bodycon dress" href="product.html"
-                                            class="product-item-link">Mesh bodycon
-                                            dress</a> </div>
-                                    <div class="product-item-description">Neque porro quisquam est, qui
-                                        dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                                        quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                    <div class="price-box"> <span class="price-container"> <span class="price-wrapper">
-                                                <span class="old-price">$290.00</span> <span
-                                                    class="special-price">$229.00</span> </span>
-                                        </span>
-                                    </div>
-                                    <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
-                                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
-                                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                    <button class="btn add-to-cart" data-product="789123"> <i
-                                            class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                </div>
-                                <!-- /Product Details -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Product Item -->
-                    <!-- Product Item -->
-                    <div class="product-item previews-2 large">
-                        <div class="product-item-inside">
-                            <div class="product-item-info">
-                                <!-- Product Photo -->
-                                <div class="product-item-photo">
-                                    <div class="product-item-gallery">
-                                        <!-- product main photo -->
-                                        <div class="product-item-gallery-main">
-                                            <a href="#"><img class="product-image-photo"
-                                                    src="images/products/product-18.jpg" alt=""></a>
-                                            <a href="quick-view.html" title="Quick View"
-                                                class="quick-view-link quick-view-btn"> <i
-                                                    class="icon icon-eye"></i><span>Quick View</span></a>
-                                        </div>
-                                        <!-- /product main photo  -->
-                                    </div>
-                                    <!-- Product Actions -->
-                                    <a href="#" title="Add to Wishlist" class="no_wishlist"> <i
-                                            class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                    <div class="product-item-actions">
-                                        <div class="share-button toBottom">
-                                            <span class="toggle"></span>
-                                            <ul class="social-list">
-                                                <li>
-                                                    <a href="#" class="icon icon-google google"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-fancy fancy"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-pinterest pinterest"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-twitter-logo twitter"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="icon icon-facebook-logo facebook"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- /Product Actions -->
-                                    <!-- product carousel -->
-                                    <div class="product-item-gallery-previews-wrapper">
-                                        <div class="product-item-gallery-previews">
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-18.jpg"
-                                                        data-image="images/products/product-18.jpg" alt=""></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-18-1.jpg"
-                                                        data-image="images/products/product-18-1.jpg" alt=""></a>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-arrows"></div>
-                                    </div>
-                                    <!-- /product carousel -->
-                                </div>
-                                <!-- /Product Photo -->
-                                <!-- Product Details -->
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a title="Backless mini dress" href="product.html"
-                                            class="product-item-link">Backless mini
-                                            dress</a> </div>
-                                    <div class="product-item-description">Neque porro quisquam est, qui
-                                        dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                                        quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                    <div class="price-box"> <span class="price-container"> <span class="price-wrapper">
-                                                <span class="price">$89.00</span></span>
-                                        </span>
-                                    </div>
-                                    <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
-                                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
-                                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                    <button class="btn add-to-cart" data-product="789123"> <i
-                                            class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                </div>
-                                <!-- /Product Details -->
-                            </div>
-                        </div>
-                    </div>
                     <!-- /Product Item -->
                     <!-- Product Item -->
                     @foreach($data as $product)
-                        <div class="product-item large category1">
-                            <div class="product-item-inside">
-                                <div class="product-item-info">
-                                    <!-- Product Photo -->
-                                    <div class="product-item-photo">
-                                        <!-- Product Label -->
-                                        <div class="product-item-label label-new"><span>New</span></div>
-                                        <!-- /Product Label -->
-                                        <div class="product-item-gallery">
-                                            <!-- product main photo -->
-                                            <div class="product-item-gallery-main">
-                                                <a href="#"><img class="product-image-photo"
-                                                                 src="{{$product->image}}" alt=""></a>
-                                                <a href="quick-view.html" title="Quick View"
-                                                   class="quick-view-link quick-view-btn"> <i
-                                                        class="icon icon-eye"></i><span>Quick View</span></a>
-                                            </div>
-                                            <!-- /product main photo  -->
-                                        </div>
-                                        <!-- Product Actions -->
-                                        <a href="#" title="Add to Wishlist" class="no_wishlist"> <i
-                                                class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                        <div class="product-item-actions">
-                                            <div class="share-button toBottom">
-                                                <span class="toggle"></span>
-                                                <ul class="social-list">
-                                                    <li>
-                                                        <a href="#" class="icon icon-google google"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-fancy fancy"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-pinterest pinterest"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-twitter-logo twitter"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-facebook-logo facebook"></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- /Product Actions -->
-                                    </div>
-                                    <!-- /Product Photo -->
-                                    <!-- Product Details -->
-                                    <div class="product-item-details">
-                                        <div class="product-item-name"> <a title="Longline  asymmetric midi skirt"
-                                                                           href="{{route('product.detail', $product->id)}}" class="product-item-link">{{$product->name}}</a>
-                                        </div>
-                                        <div class="product-item-description">Neque porro quisquam est, qui
-                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                                            quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                        <div class="price-box"> <span class="price-container"> <span class="price-wrapper">
-                                                <span class="price">{{$product->price}}đ</span></span>
-                                        </span>
-                                        </div>
-                                        <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
-                                                class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
-                                                class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                        <button class="btn add-to-cart" data-product="789123"> <i
-                                                class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                    </div>
-                                    <!-- /Product Details -->
-                                </div>
-                            </div>
+                    <div class=" col-3" >
+                        <img src="{{ $product->image }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h2 class="card-title" ><a style="color: #000000"
+                            href="{{ route('product.detail', $product->id) }}"
+                            class="product-item-link">{{ $product->name }}</a></h2>
+                          <h3 class="card-text" style="color: red"  ><span class="price">{{ $product->stocks[0]->price }}đ</span></h3>
+                          <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
+                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
+                            class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
+                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add
+                                to Cart</span> </button>
                         </div>
-                    @endforeach
-                    <!-- /Product Item -->
-                    <!-- Product Item -->
-                    <div class="product-item previews-3 large category1">
+                    </div>
+                    {{-- <div class="product-item large category1 col-4">
                         <div class="product-item-inside">
                             <div class="product-item-info">
                                 <!-- Product Photo -->
                                 <div class="product-item-photo">
                                     <!-- Product Label -->
-                                    <div class="product-item-label label-new"><span>New</span></div>
+                                    {{-- <div class="product-item-label label-new"><span>New</span></div> --}}
                                     <!-- /Product Label -->
-                                    <!-- product main photo -->
-                                    <div class="product-item-gallery-main">
-                                        <a href="#"><img class="product-image-photo"
-                                                src="images/products/product-17.jpg" alt=""></a>
-                                        <a href="quick-view.html" title="Quick View"
-                                            class="quick-view-link quick-view-btn"> <i
-                                                class="icon icon-eye"></i><span>Quick View</span></a>
-                                        <a href="product.html" class="product-item-not-available">
-                                            <span class="vert-wrapper"><span class="vert"><span class="text">Not
-                                                        Available</span></span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <!-- /product main photo  -->
+                                    {{-- <div class="product-item-gallery">
+                                        <!-- product main photo -->
+                                        <div class="product-item-gallery-main">
+                                            <a href="#"><img class="product-image-photo" src="{{ $product->image }}"
+                                                    alt=""></a>
+                                            <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i
+                                                    class="icon icon-eye"></i><span>Quick View</span></a>
+                                        </div>
+                                        <!-- /product main photo  -->
+                                    </div> --}}
                                     <!-- Product Actions -->
-                                    <a href="#" title="Add to Wishlist" class="no_wishlist"> <i
+                                    {{-- <a href="#" title="Add to Wishlist" class="no_wishlist"> <i
                                             class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
                                     <div class="product-item-actions">
                                         <div class="share-button toBottom">
-                                            <span class="toggle"></span>
-                                            <ul class="social-list">
+                                            {{-- <span class="toggle"></span> --}}
+                                            {{-- <ul class="social-list">
                                                 <li>
                                                     <a href="#" class="icon icon-google google"></a>
                                                 </li>
@@ -742,133 +239,40 @@
                                         </div>
                                     </div>
                                     <!-- /Product Actions -->
-                                    <!-- product carousel -->
-                                    <div class="product-item-gallery-previews-wrapper">
-                                        <div class="product-item-gallery-previews">
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-17.jpg"
-                                                        data-image="images/products/product-17.jpg" alt=""></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-17-1.jpg"
-                                                        data-image="images/products/product-17-1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#"><img src="images/products/product-17-2.jpg"
-                                                        data-image="images/products/product-17-2.jpg" alt=""></a>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-arrows"></div>
-                                    </div>
-                                    <!-- /product carousel -->
-                                </div>
+                                </div> --}}
                                 <!-- /Product Photo -->
                                 <!-- Product Details -->
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a title="Floral sleeveless dress"
-                                            href="product.html" class="product-item-link">Floral
-                                            sleeveless
-                                            dress</a> </div>
+                                {{-- <div class="product-item-details">
+                                    <div class="product-item-name"> <a title="Longline  asymmetric midi skirt"
+                                            href="{{ route('product.detail', $product->id) }}"
+                                            class="product-item-link">{{ $product->name }}</a>
+                                    </div>
                                     <div class="product-item-description">Neque porro quisquam est, qui
                                         dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
                                         quia nonkdni numquam eius modi tempora incidunt ut labore</div>
                                     <div class="price-box"> <span class="price-container"> <span class="price-wrapper">
-                                                <span class="price">$289.00</span>
-                                            </span>
+                                                <span class="price">{{ $product->stocks[0]->price }}đ</span></span>
                                         </span>
                                     </div>
                                     <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
                                             class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
                                             class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                    <button class="btn add-to-cart" data-product="789123"> <i
-                                            class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                </div>
+                                    <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add
+                                            to Cart</span> </button>
+                                </div> --}}
                                 <!-- /Product Details -->
-                            </div>
+                            {{-- </div>
                         </div>
-                    </div>
+                    </div> --}}
+                    @endforeach
                     <!-- /Product Item -->
                     <!-- Product Item -->
-                        <div class="product-item large category2">
-                            <div class="product-item-inside">
-                                <div class="product-item-info">
-                                    <!-- Product Photo -->
-                                    <div class="product-item-photo">
-                                        <!-- Product Label -->
-                                        <!-- /Product Label -->
-                                        <div class="product-item-gallery">
-                                            <!-- product main photo -->
-                                            <div class="product-item-gallery-main">
-                                                <a href="#"><img class="product-image-photo"
-                                                                 src="" alt=""></a>
-                                                <a href="quick-view.html" title="Quick View"
-                                                   class="quick-view-link quick-view-btn"> <i
-                                                        class="icon icon-eye"></i><span>Quick View</span></a>
-                                            </div>
-                                            <!-- /product main photo  -->
-                                        </div>
-                                        <div class="countdown-box hidden-xs">
-                                            <div class="countdown-wrapper">
-                                                <div class="countdown-title">special price expires in</div>
-                                                <div class="countdown" data-promoperiod="150000"></div>
-                                            </div>
-                                        </div>
-                                        <!-- Product Actions -->
-                                        <a href="#" title="Add to Wishlist" class="no_wishlist"> <i
-                                                class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                        <div class="product-item-actions">
-                                            <div class="share-button toBottom">
-                                                <span class="toggle"></span>
-                                                <ul class="social-list">
-                                                    <li>
-                                                        <a href="#" class="icon icon-google google"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-fancy fancy"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-pinterest pinterest"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-twitter-logo twitter"></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon-facebook-logo facebook"></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- /Product Actions -->
-                                    </div>
-                                    <!-- /Product Photo -->
-                                    <!-- Product Details -->
-                                    <div class="product-item-details">
-                                        <div class="product-item-name"> <a title="Athletic T-Shirt" href="product.html"
-                                                                           class="product-item-link"></a> </div>
-                                        <div class="product-item-description">Neque porro quisquam est, qui
-                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                                            quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                        <div class="price-box"> <span class="price-container"> <span class="price-wrapper">
-                                                <span class="old-price">$420.00</span> <span
-                                                        class="special-price">$210.00</span> </span>
-                                        </span>
-                                        </div>
-                                        <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i
-                                                class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i
-                                                class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                        <button class="btn add-to-cart" data-product="789123"> <i
-                                                class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                    </div>
-                                    <!-- /Product Details -->
-                                </div>
-                            </div>
-                        </div>
                     <!-- /Product Item -->
                 </div>
-            </div>
+            {{-- </div> --}}
         </div>
     </div>
-    <div class="block banners-with-pad">
+    {{-- <div class="block banners-with-pad">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -941,7 +345,7 @@
                     <div class="blog-carousel">
                         <div class="blog-item">
                             <a href="blog.html" class="blog-item-photo"> <img class="product-image-photo"
-                                    src="images/blog/blog-1.jpg" alt="From Blog"> </a>
+                                    src="{{asset('assets/images/blog/blog-1.jpg')}}" alt="From Blog"> </a>
                             <div class="blog-item-info">
                                 <a href="blog.html" class="blog-item-title">Inventore consectetur
                                     ullam</a>
@@ -1345,8 +749,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="block fullwidth full-nopad">
+    </div> --}}
+    <div class="block fullwidth full-nopad" style="margin-top: 50px">
         <div class="container">
             <div id="instafeed" class="instagramm-feed-full"></div>
             <div class="instagramm-title">Instagram Feed</div>

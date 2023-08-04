@@ -38,7 +38,7 @@
                                     <td>{{ $value->name }}</td>
                                     <td><img src="{{ $value->image }}" alt="" style="width: 120px;height:120px">
                                     </td>
-                                    <td></td>
+                                    <td>{{$value->desc}}</td>
                                     <td>{{ $value->Category->cate_name }}</td>
                                     <td>{{ $value->created_at }}</td>
                                     <td>{{ $value->updated_at }}</td>
@@ -69,9 +69,9 @@
 
                         </tbody>
                     </table>
-
                 </div> <!-- end card body-->
             </div> <!-- end card -->
         </div><!-- end col-->
     </div>
+
 @endsection

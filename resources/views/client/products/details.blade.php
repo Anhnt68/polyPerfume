@@ -6,7 +6,12 @@
             background: #32d0c6;
             color: white;
         }
-
+        .sp{
+            padding-left: 50px
+        }
+        #capacity{
+            margin-bottom: 20px;
+        }
         .promo {
             position: relative;
         }
@@ -67,35 +72,35 @@
 
 @section('content')
     @foreach ($product as $key => $value)
-        <div class="row">
+        <div class="row" style="margin: 50px">
             <input type="hidden" id="product_id" value="{{ $value->id }}">
             <input type="hidden" id="stock_id" value="">
 
             <div class="col-6">
                 <img src="{{ $value->image }}" width="100%">
             </div>
-            <div class="col-6 row">
-                <div class="col-6">
-                    <h4 id="name">Tên: {{ $value->name }}</h4>
-                    <h4 id="productPrice">Giá: {{ $value->stocks[0]->price }}đ</h4>
-                    <h4>Dung tích</h4>
+            <div class="col-6 sp">
+                <div>
+                    <h1 id="name"> {{ $value->name }}</h1>
+                    <h2  id="productPrice" style="color: red">{{ $value->stocks[0]->price }}₫</h2>
+                    <h3 >Dung tích</h3 ><br>
                     @foreach ($value->stocks as $capa)
                         <span data-id="{{ $capa->id }}" id="capacity" class="p-3 border capacity-ml">
                             {{ $capa->Capacity->capacity_name }} ml</span>
                     @endforeach
-                </div>
-                <div class="col-6">
-                    <form action="">
-                        <label for="">Quantity</label>
-                        <div class="input-group text-center mb-3" style="width: 130px;">
+                </div >
+                <br><form action="">
+                        <h3>Số lượng</h3 >
+                        <div class="input-group text-center mb-3" style="width: 100px; ">
                             <button class="input-group-text decrement-btn">-</button>
                             <input type="text" name="quantity" id="" class="form-control text-center qty-input"
                                 value="1">
                             <button class="input-group-text increment-btn">+</button>
                         </div>
                     </form>
+                    <div id="addtocart" class="btn" >Add to cart</div>
                 </div>
-                <div id="addtocart" class="btn">Add to cart</div>
+                
             </div>
         </div>
         {{--

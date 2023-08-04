@@ -214,7 +214,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-8">
                     <div class="image-banner text-center">
-                        <a href="#"> <img src="images/banners/footer-banner.jpg" alt="Footer Banner"
+                        <a href="#"> <img src="{{asset('assets/client/images/banners/footer-banner.jpg')}}" alt="Footer Banner"
                                 class="img-responsive"> </a>
                     </div>
                 </div>

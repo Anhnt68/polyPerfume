@@ -47,7 +47,7 @@ class CheckoutController extends Controller
         });
 
         Cart::where('user_id', $request->user_id)->delete();
-        return "Thành công";
+        return view('client.checkout.thankyou');
 
     }
 }

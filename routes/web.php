@@ -41,6 +41,7 @@ Route::prefix('bill')->name('bill.')->group(function () {
 
 
 Route::prefix('product')->name('product.')->group(function () {
+    Route::post('search', [HomeController::class, 'productSearch'])->name('search');
     Route::get('/detail/{id}', [HomeController::class, 'productDetail'])->name('detail');
 });
 Route::get('/dashboard', function () {

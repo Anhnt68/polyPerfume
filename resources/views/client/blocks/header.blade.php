@@ -80,12 +80,27 @@
                             <!-- Header Account -->
                             <div class="header-link dropdown-link header-account">
                                 @if(Auth::user())
-                                    <span class="link-text">Xin chào {{Auth::user()->name}}</span>
-                                    <div class="dropdown-container right">
-                                        <a href="{{route('logout')}}">Log out</a>
-                                    </div>
+                                <li class="nav-item dropdown" style="list-style:none; margin-top:20px">
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Xin chào {{Auth::user()->name}}</a>
+                                    <ul class="dropdown-menu">
+                                      <li><form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <x-dropdown-link :href="route('logout')"
+                                                         onclick="event.preventDefault();
+                                                                this.closest('form').submit();">
+                                            <span>Log Out</span>
+                                        </x-dropdown-link>
+                                    </form></li>
+                                      {{-- <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                      <li><hr class="dropdown-divider"></li>
+                                      <li><a class="dropdown-item" href="#">Separated link</a></li> --}}
+                                    </ul>
+                                  </li>
                                         @else
-                                            <a href="{{route('loginUser')}}"><i class="icon icon-user"></i><span
+                                        <div class="header-link">
+                                        </div>
+                                            <a href="{{route('loginUser')}}"><i class="icon icon-user"></i><span class="bad"></span><span
                                                     class="link-text">Login</span></a>
                                         @endif
                                         {{--                                <div class="dropdown-container right">--}}
@@ -115,17 +130,7 @@
                         </div>
                     </div>
                     <!-- Header Search -->
-                    <div class="header-link header-search header-search">
-                        <div class="exp-search">
-                            <form>
-                                <input class="exp-search-input " placeholder="Search here ..." type="text"
-                                       value="">
-                                <input class="exp-search-submit" type="submit" value="">
-                                <span class="exp-icon-search"><i class="icon icon-magnify"></i></span>
-                                <span class="exp-search-close"><i class="icon icon-close"></i></span>
-                            </form>
-                        </div>
-                    </div>
+                    
                     <!-- /Header Search -->
                 </div>
                 <!-- Logo -->
@@ -206,7 +211,7 @@
                 </div>
                 <!-- /Logo -->
                 <!-- Mobile Menu -->
-                <div class="mobilemenu dblclick">
+                {{-- <div class="mobilemenu dblclick">
                     <div class="mobilemenu-header">
                         <div class="title">MENU</div>
                         <a href="#" class="mobilemenu-toggle"></a>
@@ -389,15 +394,29 @@
                             <li><a href="category.html">Electronics</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Mobile Menu -->
                 <!-- Mega Menu -->
+                <div class="header-link header-search header-search">
+                    {{-- <div class="exp-search">
+                        <form action="" >
+                            <input class="exp-search-input " placeholder="Search here ..." type="text"
+                                   value="">
+                            <input class="exp-search-submit" type="submit" value="">
+                            <span class="exp-icon-search"><i class="icon icon-magnify"></i></span>
+                            <span class="exp-search-close"><i class="icon icon-close"></i></span>
+                        </form>
+                    </div> --}}
+                </div>
                 <div class="megamenu fadein blackout">
                     <ul class="nav">
-                        <li><a href="index-2.html" title=""><i class="icon icon-home"></i></a></li>
-                        <li class="mega-dropdown">
+                        {{-- <li><a href="index-2.html" title=""><i class="icon icon-home"></i></a></li> --}}
+                        <form action="{{route('product.search')}}" style="margin-top: 18px " method="post">
+                            @csrf
+                            <input  type="text" name="search" class=""placeholder="Search here ..." style="height:40px; width: 200px; margin-right: 20px ; border-radius: 5px" ><button class="btn" style="height:40px">Tìm kiếm</button>
+                        </form>
+                        {{-- <li class="mega-dropdown">
                             <a href="index-2.html">Layouts</a>
-
                             <div class="sub-menu">
                                 <div class="container">
                                     <div class="megamenu-categories column-5">
@@ -878,9 +897,12 @@
                                     <li><a href="blog-single.html" title="">Single Post</a></li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
+                        
                     </ul>
+                    
                 </div>
+                
                 <!-- /Mega Menu -->
             </div>
         </div>

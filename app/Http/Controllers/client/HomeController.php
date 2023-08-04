@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categories;
 use App\Models\Products;
 use Illuminate\Http\Request;
 use App\Models\Stocks;
@@ -16,8 +17,9 @@ class HomeController extends Controller
     public function index()
     {
         $data = Products::query()->latest()->get();
+        $model = Categories::query()->get(); 
 //        dd($data);
-        return view('client.blocks.main', compact('data'));
+        return view('client.blocks.main', compact('data', 'model'));
     }
 
     /**
@@ -29,6 +31,7 @@ class HomeController extends Controller
 
         $product = Products::where('products.id', $id)
             ->get();
+          
 //        $capacity =
 
         return view('client.products.details', compact('product'));
@@ -48,7 +51,12 @@ class HomeController extends Controller
             ]
         ]);
     }
-
+    public function productSearch(Request $request){
+        $searchTerm = $request->search;
+        $data = Products::where('name', 'LIKE', "%{$searchTerm}%")
+            ->get(); 
+        return view('client.products.search',compact('data'));   
+    }
     public function test() {
 
     }
