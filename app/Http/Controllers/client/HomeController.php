@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categories;
+use App\Models\Products;
 use Illuminate\Http\Request;
 use App\Models\Stocks;
-
 
 
 class HomeController extends Controller
@@ -15,55 +16,48 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = Stocks::orderBy('created_at', 'DESC')->get();
-        return view('client.blocks.main', compact('data'));
+        $data = Products::query()->latest()->get();
+        $model = Categories::query()->get(); 
+//        dd($data);
+        return view('client.blocks.main', compact('data', 'model'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function productDetail($id)
     {
-        //
+//        dd($id);
+
+        $product = Products::where('products.id', $id)
+            ->get();
+          
+//        $capacity =
+
+        return view('client.products.details', compact('product'));
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function getProductPrice(Request $request)
     {
-        //
-    }
+        if ($request['id']) {
+            $data = Stocks::query()->find($request['id']);
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        return response()->json([
+            'code' =>200,
+            'data' => [
+                'price' => $data->price ?? 0
+            ]
+        ]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+    public function productSearch(Request $request){
+        $searchTerm = $request->search;
+        $data = Products::where('name', 'LIKE', "%{$searchTerm}%")
+            ->get(); 
+        return view('client.products.search',compact('data', 'searchTerm'));   
     }
+    public function test() {
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

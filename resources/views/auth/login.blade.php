@@ -1,4 +1,8 @@
 <x-guest-layout>
+    <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+        {{-- <img src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
+        <h1>Chào mừng bạn đến với trang admin</h1>
+    </div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
@@ -8,7 +12,6 @@
             <span class="padding-bottom--15">Đăng nhập</span>
             <form id="stripe-login" action="{{ route('login') }}" method="post">
                 @csrf
-
                 <div class="field padding-bottom--24">
                     <label for="email">Email</label>
                     <input type="email" name="email" placeholder="Email ..." value="{{ old('email') }}">

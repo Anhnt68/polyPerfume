@@ -1064,6 +1064,27 @@ body.touch #wrapper {
   color: #ffffff;
   text-decoration: none;
 }
+
+.header-link > a .bad {
+  position: relative;
+  left: -15px;
+  top: -14px;
+  width: 17px;
+  height: 17px;
+  margin-right: -20px;
+  padding: 0;
+  font-size: 12px;
+  font-family: sans-serif;
+  line-height: 18px;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+}
+.header-link > a:hover .bad {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .header-link > a i.icon {
   font-size: 19px;
   line-height: 1.6em;
@@ -1420,6 +1441,14 @@ body.touch #wrapper {
     font-size: 14px;
     line-height: 21px;
   }
+  .header-link > a .bad {
+    display: inline-block;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 21px;
+  }
   .header-link.header-search {
     position: absolute;
     bottom: 42px;
@@ -1467,6 +1496,9 @@ body.touch #wrapper {
     font-size: 28px;
   }
   .page-header.sticky.is-sticky .navbar .header-link > a .badge {
+    top: -10px;
+  }
+  .page-header.sticky.is-sticky .navbar .header-link > a .bad {
     top: -10px;
   }
   .page-header.sticky.is-sticky .navbar .header-cart.variant-2 .dropdown-container {
@@ -1823,6 +1855,9 @@ body.touch #wrapper {
     font-size: 28px;
   }
   .page-header.variant-3 .navbar .header-link.header-cart > a .badge {
+    top: -10px;
+  }
+  .page-header.variant-3 .navbar .header-link.header-cart > a .bad {
     top: -10px;
   }
   .page-header.variant-3 .navbar .header-logo {
@@ -2536,7 +2571,11 @@ body.touch #wrapper {
   .page-header.variant-7:not(.is-sticky) .header-middle-right .header-link.header-cart.variant-2 > a {
     position: relative;
   }
+  
   .page-header.variant-7:not(.is-sticky) .header-middle-right .header-link.header-cart.variant-2 > a .badge {
+    right: -8px;
+  }
+  .page-header.variant-7:not(.is-sticky) .header-middle-right .header-link.header-cart.variant-2 > a .bad {
     right: -8px;
   }
   .page-header.variant-7:not(.is-sticky) .header-middle-right .header-link.header-cart.variant-2 .dropdown-container {
@@ -2546,6 +2585,18 @@ body.touch #wrapper {
     font-size: 34px;
   }
   .page-header.variant-7:not(.is-sticky) .header-middle-right .header-link.header-cart > a .badge {
+    position: absolute;
+    left: auto;
+    right: 10px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius: 50%;
+  }
+  .page-header.variant-7:not(.is-sticky) .header-middle-right .header-link.header-cart > a .bad {
     position: absolute;
     left: auto;
     right: 10px;
@@ -2831,6 +2882,9 @@ body.open-panel .page-header.variant-7:not(.is-sticky).fullboxed .header-middle-
     margin: 0 0 0 5px;
   }
   .page-header.variant-8 .header-link.header-cart > a .badge {
+    top: -10px;
+  }
+  .page-header.variant-8 .header-link.header-cart > a .bad {
     top: -10px;
   }
   .page-header.variant-8.is-sticky .header-logo {
@@ -3154,6 +3208,9 @@ body.open-panel .page-header.variant-7:not(.is-sticky).fullboxed .header-middle-
     padding-right: 0;
   }
   .page-header.variant-9:not(.is-sticky) .navbar .header-link > a .badge {
+    left: -10px;
+  }
+  .page-header.variant-9:not(.is-sticky) .navbar .header-link > a .bad {
     left: -10px;
   }
   .page-header.variant-9:not(.is-sticky) .navbar .header-link .link-text {
@@ -15409,9 +15466,8 @@ h2,
 h3 {
   font-size: 16px;
   line-height: 1.5em;
-  font-family: 'Raleway', sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
+  
   padding: 0;
   margin: 0 0 5px 0;
   color: #333745;
@@ -16639,6 +16695,10 @@ body.edit-mode .fixed-btns {
   border-top-color: #f7f7f7;
 }
 .tabaccordion .panel-default > .panel-heading .badge {
+  color: #ffffff;
+  background-color: #333745;
+}
+.tabaccordion .panel-default > .panel-heading .bad {
   color: #ffffff;
   background-color: #333745;
 }
@@ -19826,3 +19886,8 @@ display: block;
 position: relative;
 left: 15px;
 }
+.header-link > a .bad {
+  display: block;
+  position: relative;
+  left: 15px;
+  }

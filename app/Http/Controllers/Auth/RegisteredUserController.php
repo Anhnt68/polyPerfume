@@ -22,6 +22,10 @@ class RegisteredUserController extends Controller
     {
         return view('auth.register');
     }
+    public function createUser(): View
+    {
+        return view('client.user.register');
+    }
 
     /**
      * Handle an incoming registration request.
@@ -51,5 +55,31 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+    public function storeUser(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'phone'=>['required'],
+            'address'=>['required'],
+            'role' => ['nullable'],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'role' => 0,
+        ]);;
+
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect(RouteServiceProvider::INDEX);
     }
 }

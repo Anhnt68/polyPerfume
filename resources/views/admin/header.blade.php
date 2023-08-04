@@ -2,12 +2,12 @@
     <!-- LOGO -->
     <div class="navbar-brand-box d-flex align-items-left">
         <a href="index.html" class="logo">
-{{--            <span>--}}
-{{--                <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="18">--}}
-{{--            </span>--}}
-{{--            <i>--}}
-{{--                <img src="{{ asset('assets/images/logo-small.png') }}" alt="" height="24">--}}
-{{--            </i>--}}
+            {{--            <span> --}}
+            {{--                <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="18"> --}}
+            {{--            </span> --}}
+            {{--            <i> --}}
+            {{--                <img src="{{ asset('assets/images/logo-small.png') }}" alt="" height="24"> --}}
+            {{--            </i> --}}
             <span>
                 <img src="{{ asset('assets/images/logo.png') }}" alt="" height="100">
             </span>
@@ -159,28 +159,10 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                    <span>Inbox</span>
-                    <span>
-                        <span class="badge badge-pill badge-info">3</span>
-                    </span>
-                </a>
-                <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                    <span>Profile</span>
-                    <span>
-                        <span class="badge badge-pill badge-warning">1</span>
-                    </span>
-                </a>
-                <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                    Settings
-                </a>
-                <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                    <span>Lock Account</span>
-                </a>
-                <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <x-dropdown-link :href="route('logout')"
-                                         onclick="event.preventDefault();
+                            onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                             <span>Log Out</span>
                         </x-dropdown-link>

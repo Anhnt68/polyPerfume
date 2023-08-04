@@ -90,13 +90,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" class="waves-effect"><i
+                            <a href="{{ route('admin.bill.bill') }}" class="waves-effect"><i
                                     class="bi bi-card-checklist"></i><span
                                     class="badge badge-pill badge-danger float-right">6</span><span>Order</span></a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="ui-cards.html">List</a></li>
-                                <li><a href="ui-buttons.html">Add</a></li>
-                            </ul>
+
                         </li>
 
 

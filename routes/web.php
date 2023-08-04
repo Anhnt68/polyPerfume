@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\client\HomeController;
+use App\Http\Controllers\client\CheckoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +21,28 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//dd(bcrypt('123456'));
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('test', [HomeController::class, 'getProductPrice'])->name('get-price');
+Route::get('add-to-cart', [\App\Http\Controllers\Client\CartController::class, 'addToCart'])->name('add-to-cart');
+Route::delete('del-cart/{id}', [\App\Http\Controllers\Client\CartController::class, 'delCart'])->name('del-cart');
+Route::get('view-cart', [\App\Http\Controllers\Client\CartController::class, 'viewCart'])->name('view-cart');
+Route::prefix('checkout')->name('checkout.')->group(function () {
+    Route::get('/{id}', [CheckoutController::class, 'form'])->name('checkoutget');
+    Route::post('/', [CheckoutController::class, 'submit_form'])->name('checkout');
+    Route::get('/checkBill', [CheckoutController::class, 'checkBill'])->name('checkBill');
+    Route::get('/CheckProduct/{id}', [CheckoutController::class, 'getProducts'])->name('CheckProduct');
+});
+Route::prefix('bill')->name('bill.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\client\BillController::class, 'getBill'])->name('bill');
+    Route::get('/billProduct/{id}', [\App\Http\Controllers\client\BillController::class, 'billProduct'])->name('bill-product');
+//    Route::get('/CheckProduct/{id}', [CheckoutController::class, 'getProducts'])->name('CheckProduct');
+});
 
-Route::get('/', [HomeController::class, 'index']);
+
 Route::prefix('product')->name('product.')->group(function () {
-    Route::get('/detail/{id}', [\App\Http\Controllers\client\ProductController::class, 'show'])->name('detail');
+    Route::post('search', [HomeController::class, 'productSearch'])->name('search');
+    Route::get('/detail/{id}', [HomeController::class, 'productDetail'])->name('detail');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -92,4 +111,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/update/{id}', [ProductController::class, 'update'])->name('post-edit');
         Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('delete');
     });
+    Route::prefix('bill')->name('bill.')->group(function () {
+        Route::get('/', [\App\Http\Controllers\BillController::class, 'getBill'])->name('bill');
+        Route::get('/billProduct/{id}', [\App\Http\Controllers\BillController::class, 'billProduct'])->name('bill-product');
+        Route::get('/edit/{id}', [\App\Http\Controllers\BillController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [\App\Http\Controllers\BillController::class, 'update'])->name('update');
+    });
 });
+
